@@ -1,5 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var superagent = require('superagent');
+var redis = require('redis');
+var config = require('../config.js');
+var client  = redis.createClient(config.redis.port,'127.0.0.1');
+// client.auth(config.redis.pwd);
+client.select('4');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
