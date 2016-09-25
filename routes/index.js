@@ -4,12 +4,13 @@ var superagent = require('superagent');
 var redis = require('redis');
 var config = require('../config.js');
 var client  = redis.createClient(config.redis.port,config.redis.ip);
+// var client  = redis.createClient(config.redis.port,'127.0.0.1');
 client.auth(config.redis.pwd);
 client.select(config.redis.db);
+// client.select('4');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '十一出行先看看旅伴靠谱啵！' });
   var thisUrl = req.url;
   var shareId = req.query.id;
   var shareUrl = encodeURIComponent((global.browserURL + thisUrl).split('#')[0]);
@@ -48,6 +49,7 @@ router.get('/', function(req, res, next) {
               console.log(' 正常请求---------- ');
               var info = JSON.stringify(res4);
               var selfInfo = JSON.parse(res4.text);
+              console.log('玩家信息:'+info.text);
               // 判断玩家是否存在集合
               var openid = selfInfo.openid;
               console.log(openid);
@@ -220,7 +222,7 @@ router.post('/post',function (req,res,next) {
   client.get('uid',function (err,uid) {
     client.hset('tripperUserOpenId',openid,id);
     client.hset('tripperuser',uid,JSON.stringify(userInfo));
-    res.send({id:'存储完成'});
+    // res.send({id:'存储完成'});
   })
 })
 
