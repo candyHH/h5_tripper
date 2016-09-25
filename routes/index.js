@@ -175,7 +175,7 @@ router.get('/index', function(req, res, next) {
                       if(err){
                         console.log(err);
                       }else{
-                        result.id = id;
+                        result.id = shareId;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
                         superagent
