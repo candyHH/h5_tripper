@@ -50,7 +50,6 @@ router.get('/', function(req, res, next) {
               console.log(' 正常请求---------- ');
               var info = JSON.stringify(res4);
               var selfInfo = JSON.parse(res4.text);
-              console.log('玩家信息:'+info.text);
               // 判断玩家是否存在集合
               var openid = selfInfo.openid;
               console.log(openid);
@@ -209,7 +208,7 @@ router.get('/addData', function(req, res, next) {
       }))
     })
   }
-  res.render('/addData');
+  res.render('addData');
   //存储openid与id对应的关系
   // client.hset('tripperUserOpenId','name','id');
 });
@@ -225,7 +224,7 @@ router.post('/post',function (req,res,next) {
   client.get('uid',function (err,uid) {
     client.hset('tripperUserOpenId',openid,id);
     client.hset('tripperuser',uid,JSON.stringify(userInfo));
-    // res.send({id:'存储完成'});
+    res.send({id:'存储完成'});
   })
 })
 
