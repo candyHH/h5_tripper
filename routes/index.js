@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index', function(req, res, next) {
-  var id = req.query.id;
+  var shareId = req.query.id;
   //微信授权
   if(id){
     client.hget('tripperuser',id,function (err,result) {
@@ -96,11 +96,15 @@ router.get('/index', function(req, res, next) {
       }
     })
   }
+
 });
 
 router.get('/result',function (req,res,next) {
-  var num = Math.floor(Math.random()*27+1);
-  res.render('index', { title: 'Express' });
+  var userId = req.query.userid;
+  var shareId = req.query.shareid;
+
+  //获取分享者的答案和答题者的答案
+  res.render('result', { title: 'Express' });
 })
 
 router.get('/addData', function(req, res, next) {
@@ -116,8 +120,10 @@ router.get('/addData', function(req, res, next) {
   //     }))
   //   })
   // }
-  // client.hset('tripperuserId','name','id');
-  client.hget('tripperuserId','userid',function (err,flag) {
+  //存储openid与id对应的关系
+  // client.hset('tripperUserOpenId','name','id');
+  //查找openId是否存在于hash中
+  client.hget('tripperUserOpenId','openId',function (err,flag) {
     if(flag == null || flag == ''){
       console.log('不存在');
     }else{
