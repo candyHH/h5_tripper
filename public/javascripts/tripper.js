@@ -45,11 +45,22 @@ $('.choice-info').click(function(){
 	}else if(type == '10') {
 		// alert(anser);
 		console.log(anser);
-		// result = anser.join("-");
-		sessionStorage.setItem('result',anser);
-		// result = sessionStorage.getItem('result');
-		// alert(result);
-		// console.log('result'+result);
-		// window.location.href='result';
+		result = anser.join("-");
+		// sessionStorage.setItem('result',anser);
+		
+		$.ajax({
+			type : 'post'
+			,url : 'index'
+			,data : {
+				nickname : selfInfo.nickname
+				,anser : result
+				,img : selfInfo.img
+				,openid : selfInfo.openid
+			}
+			,dataType : 'json'
+			,success : function(data){
+				alert('yes');
+			}
+		})
 	}
 })

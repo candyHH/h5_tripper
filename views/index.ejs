@@ -20,10 +20,11 @@
     <div class="question container hide">
     	<!-- 顶部头像和题号 -->
     	<div class="header">
-
+			<img class="potrait-img" src="<%=shareInfo.img%>" alt="">
     		<!-- 分享者信息 -->
     		<div class="share-info">
     			<div class="share-text">
+    				<p><%=shareInfo.name%></p>
     				<p>想要和你一起旅行</p>
     			</div>
     		</div>
@@ -109,7 +110,9 @@
   <script src="javascripts/tripper.js"></script>
   <script type="text/javascript">
   var shareInfo = '<%= shareInfo %>';
-  console.log(shareInfo);
+  var selfInfo = '<%= selfInfo %>';
+  // console.log(shareInfo);
+
 
   </script>
 
