@@ -270,10 +270,12 @@ router.post('/post',function (req,res,next) {
     img:req.body.img,
     answer:req.body.answer,
   }
+  console.log(userInfo);
   var openid = req.body.openid;
+  console.log(openid);
   client.incr('uid');
   client.get('uid',function (err,uid) {
-    client.hset('tripperUserOpenId',openid,id);
+    client.hset('tripperUserOpenId',openid,uid);
     client.hset('tripperuser',uid,JSON.stringify(userInfo));
     res.send({id:'存储完成'});
   })
