@@ -209,6 +209,7 @@ router.get('/addData', function(req, res, next) {
       }))
     })
   }
+  res.render('/addData');
   //存储openid与id对应的关系
   // client.hset('tripperUserOpenId','name','id');
 });
