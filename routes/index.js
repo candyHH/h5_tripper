@@ -3,6 +3,7 @@ var router = express.Router();
 var superagent = require('superagent');
 var redis = require('redis');
 var config = require('../config.js');
+var userInfo = require('../majia.js');
 var client  = redis.createClient(config.redis.port,config.redis.ip);
 // var client  = redis.createClient(config.redis.port,'127.0.0.1');
 client.auth(config.redis.pwd);
