@@ -171,7 +171,7 @@ router.get('/index', function(req, res, next) {
                   console.log('不存在');
                   //判断是否由他人分享
                   if(shareId){
-                    client.hget('tripperuser',id,function (err,result) {
+                    client.hget('tripperuser',shareId,function (err,result) {
                       if(err){
                         console.log(err);
                       }else{
