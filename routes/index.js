@@ -56,7 +56,6 @@ router.get('/', function(req, res, next) {
               client.hget('tripperUserOpenId',openid,function (err,selfid) {
                 if(selfid == null || selfid == ''){
                   console.log('不存在');
-                  // isShare(shareId,shareUrl,selfInfo);
                   //判断是否由他人分享
                   if(shareId){
                     client.hget('tripperuser',id,function (err,result) {
@@ -66,7 +65,6 @@ router.get('/', function(req, res, next) {
                         result.id = id;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
-                        // wechatShare(shareUrl,selfInfo,shareInfo);
                         superagent
                           .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
                           .end(function(err2, res2) {
@@ -171,7 +169,60 @@ router.get('/index', function(req, res, next) {
               client.hget('tripperUserOpenId',openid,function (err,selfid) {
                 if(selfid == null || selfid == ''){
                   console.log('不存在');
-                  isShare(shareId,shareUrl,selfInfo);
+                  //判断是否由他人分享
+                  if(shareId){
+                    client.hget('tripperuser',id,function (err,result) {
+                      if(err){
+                        console.log(err);
+                      }else{
+                        result.id = id;
+                        console.log('result...'+result);
+                        var shareInfo = JSON.parse(result);
+                        superagent
+                          .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
+                          .end(function(err2, res2) {
+                            if (res2 !== undefined && res2.ok) {
+                              res2.body.browserUrl = global.browserURL;
+                              res2.body.selfInfo = selfInfo;
+                              res2.body.shareInfo = shareInfo;
+                              var string2= JSON.stringify(res2.body);
+                              console.log('分享成功啦！'+string2);
+                              res.render('index',res2.body);
+                            } else {
+                              console.error('微信分享api错误。');
+                            }
+                          });
+                      }
+                    })
+                  }else{
+                    var num = Math.floor(Math.random()*27+1);
+                    console.log(num);
+                    client.hget('tripperuser',num,function (err,result) {
+                      if(err){
+                        console.log(err);
+                      }else{
+                        // result.id = num;
+                        console.log('result...'+result);
+                        var shareInfo = JSON.parse(result);
+                        shareInfo.id = num;
+                        // wechatShare(shareUrl,selfInfo,shareInfo);
+                        superagent
+                          .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
+                          .end(function(err2, res2) {
+                            if (res2 !== undefined && res2.ok) {
+                              res2.body.browserUrl = global.browserURL;
+                              res2.body.selfInfo = selfInfo;
+                              res2.body.shareInfo = shareInfo;
+                              var string2= JSON.stringify(res2.body);
+                              console.log('分享成功啦！'+string2);
+                              res.render('index',res2.body);
+                            } else {
+                              console.error('微信分享api错误。');
+                            }
+                          });
+                      }
+                    })
+                  }
                 }else{
                   console.log('存在');
                   console.log(selfid);
