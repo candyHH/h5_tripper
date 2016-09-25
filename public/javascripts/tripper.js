@@ -5,8 +5,6 @@ $(document).ready(function(){
 	setTimeout(function(){
 		$('.index').hide('slow');
 		$('.question').show('slow');
-
-
 	},2000);
 })
 
@@ -15,10 +13,8 @@ var result;
 $('.choice-info').click(function(){
 	var type = $(this).attr('type');
 	var data = $(this).parent().attr('data');
+	console.log(data);
 	anser.push(data);
-	// console.log('anser'+ anser);
-	// $('.step-1').addClass('hide');
-	// $('.step-2').removeClass('hide');
 	if (type == '1') {
 		$('.step-1').hide('slow');
 		$('.step-2').show('slow');
@@ -48,16 +44,11 @@ $('.choice-info').click(function(){
 		$('.step-10').show('slow');
 	}else if(type == '10') {
 		// alert(anser);
+		console.log(anser);
 		sessionStorage.setItem('result',anser);
-		alert(result);
+		var answer = sessionStorage.getItem('result');
+		// alert(result);
+		console.log(answer);
 		// window.location.href='result';
 	}
 })
-
-
-
-
-
-
-
-
