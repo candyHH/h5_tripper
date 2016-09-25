@@ -50,7 +50,7 @@ $('.choice-info').click(function(){
 		
 		$.ajax({
 			type : 'post'
-			,url : 'index'
+			,url : 'post'
 			,data : {
 				nickname : selfInfo.nickname
 				,anser : result
