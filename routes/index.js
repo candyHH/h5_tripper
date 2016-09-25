@@ -90,9 +90,10 @@ router.get('/', function(req, res, next) {
                       if(err){
                         console.log(err);
                       }else{
-                        result.id = num;
+                        // result.id = num;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
+                        shareInfo.id = num;
                         // wechatShare(shareUrl,selfInfo,shareInfo);
                         superagent
                           .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
