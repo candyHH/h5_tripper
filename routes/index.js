@@ -70,6 +70,7 @@ router.get('/', function(req, res, next) {
                 }else{
                   console.log('存在');
                   console.log(flag);
+                  // res.redirect('success?id='+uid);
                 }
                 res.render('index', { title: 'Express' });
               });
@@ -80,15 +81,17 @@ router.get('/', function(req, res, next) {
 
 router.get('/index', function(req, res, next) {
   var shareId = req.query.id;
+  console.log(shareId);
   //微信授权
-  if(id){
+  if(shareId){
     client.hget('tripperuser',id,function (err,result) {
       if(err){
         console.log(err);
       }else{
         result.id = id;
         console.log('result...'+result);
-        res.render('index',JSON.parse(result));
+        var info = JSON.parse(result);
+        res.render('index',{result:info});
       }
     })
   }else{
@@ -105,7 +108,6 @@ router.get('/index', function(req, res, next) {
       }
     })
   }
-
 });
 
 router.get('/result',function (req,res,next) {
