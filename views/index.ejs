@@ -110,9 +110,14 @@
   <script src="javascripts/tripper.js"></script>
   <script type="text/javascript">
   var shareInfo = '<%= shareInfo %>';
-  var selfInfo = '<%= selfInfo %>';
-  // console.log(shareInfo);
+  var selfInfo = {
+  	openid : '<%= selfInfo.openid %>'
+  	,name : '<% =selfInfo.name %>'
+  	,img : '<% =selfInfo.img %>'
 
+  }
+  // console.log(shareInfo);
+  
 
   </script>
 

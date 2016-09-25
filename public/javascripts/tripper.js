@@ -52,8 +52,8 @@ $('.choice-info').click(function(){
 			type : 'post'
 			,url : 'post'
 			,data : {
-				nickname : selfInfo.nickname
-				,anser : result
+				name : selfInfo.nickname
+				,answer : result
 				,img : selfInfo.img
 				,openid : selfInfo.openid
 			}
