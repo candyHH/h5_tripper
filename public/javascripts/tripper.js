@@ -60,6 +60,10 @@ $('.choice-info').click(function(){
 			,dataType : 'json'
 			,success : function(data){
 				alert('yes');
+				window.location.href = 'result';
+				sessionStorage.setItem('shareInfo', JSON.stringify(shareInfo));
+				sessionStorage.setItem('selfInfo',JSON.stringify(selfInfo));
+
 			}
 		})
 	}

@@ -1,7 +1,8 @@
 
-
-var anser = sessionStorage.getItem('result');
-console.log(anser);
+var selfInfo = sessionStorage.getItem('selfInfo');
+var shareInfo = sessionStorage.getItem('shareInfo');
+alert(selfInfo);
+alert(shareInfo);
 
 
 // 点击马甲头像，跳出弹框
