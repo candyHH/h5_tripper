@@ -109,15 +109,15 @@
   <script src="javascripts/jquery-1.10.1.min.js"></script>
   <script src="javascripts/tripper.js"></script>
   <script type="text/javascript">
-  var shareInfo = '<%=shareInfo%>';
-  var selfInfo = '<%=selfInfo%>';
-  // selfInfo=JSON.stringify(selfInfo);
-  selfInfo=JSON.parse(selfInfo);
-
-
-  alert(selfInfo);
+  var shareInfo = '<%= shareInfo %>';
+  var selfInfo = '<%= selfInfo %>';
+  var selfInfo = {
+  	nickname : <%=selfInfo.nickname%>
+  	,img : <%=selfInfo.headimgurl%>
+  	,openid : <%%=selfInfo.openid>
+  }
   // console.log(shareInfo);
-  
+
 
   </script>
 
