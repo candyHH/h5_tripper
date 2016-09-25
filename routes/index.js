@@ -85,11 +85,11 @@ function isShare(shareId,shareUrl,selfInfo) {
   }else{
     var num = Math.floor(Math.random()*27+1);
     console.log(num);
-    client.hget('tripperuser',num,function (err,result) {
+    client.hget('tripperuser',num,function (err,shareInfo) {
       if(err){
         console.log(err);
       }else{
-        result.id = num;
+        shareInfo.id = num;
         console.log('result...'+result);
         var shareInfo = JSON.parse(result);
         wechatShare(shareUrl,selfInfo,shareInfo);
