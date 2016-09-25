@@ -45,10 +45,11 @@ $('.choice-info').click(function(){
 	}else if(type == '10') {
 		// alert(anser);
 		console.log(anser);
+		// result = anser.join("-");
 		sessionStorage.setItem('result',anser);
-		var answer = sessionStorage.getItem('result');
+		// result = sessionStorage.getItem('result');
 		// alert(result);
-		console.log(answer);
+		// console.log('result'+result);
 		// window.location.href='result';
 	}
 })

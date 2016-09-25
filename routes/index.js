@@ -1,16 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var superagent = require('superagent');
-var redis = require('redis');
-var config = require('../config.js');
-var userInfo = require('../majia.js');
-console.log(userInfo.nickname[0]);
-// var client  = redis.createClient(config.redis.port,'127.0.0.1');
-// client.auth(config.redis.pwd);
-client.select('4');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.render('index', { title: '十一出行先看看旅伴靠谱啵！' });
   var thisUrl = req.url;
   var shareUrl = encodeURIComponent((global.browserURL + thisUrl).split('#')[0]);
   console.log('shareUrl.................'+(global.browserURL + thisUrl).split('#')[0]);
@@ -109,42 +102,8 @@ router.get('/index', function(req, res, next) {
   }
 });
 
-router.get('/result',function (req,res,next) {
-  var userId = req.query.userid;
-  var shareId = req.query.shareid;
-
-  //获取分享者的答案和答题者的答案
-  res.render('result', { title: 'Express' });
-})
-
-router.get('/addData', function(req, res, next) {
-  // for(var i =0;i<27;i++){
-  //   client.incr('uid');
-  //   client.get('uid',function (err,uid) {
-  //     var num = uid-1;
-  //     client.hmset('tripperuser',uid,JSON.stringify({
-  //       name:userInfo.nickname[num],
-  //       img:global.browserURL+'/images/'+userInfo.img[num],
-  //       answer:userInfo.answer[num],
-  //       match:''
-  //     }))
-  //   })
-  // }
-  //存储openid与id对应的关系
-  // client.hset('tripperUserOpenId','name','id');
-  //查找openId是否存在于hash中
+router.get('/result', function(req, res, next) {
+  res.render('result', { title: '十一出行先看看旅伴靠谱啵！' });
 });
-
-router.post('/post',function (req,res,next) {
-  var userInfo = {
-    name:req.body.name,
-    img:req.body.img,
-    answer:req.body.answer
-  }
-  client.incr('uid');
-  client.get('uid',function (err,uid) {
-    client.hset('tripperuser',uid,JSON.stringify(userInfo));
-  })
-})
 
 module.exports = router;
