@@ -132,18 +132,20 @@ router.get('/addData', function(req, res, next) {
   // }
   //存储openid与id对应的关系
   // client.hset('tripperUserOpenId','name','id');
-  //查找openId是否存在于hash中
 });
 
 router.post('/post',function (req,res,next) {
   var userInfo = {
     name:req.body.name,
     img:req.body.img,
-    answer:req.body.answer
+    answer:req.body.answer,
   }
+  var openid = req.body.openid;
   client.incr('uid');
   client.get('uid',function (err,uid) {
+    client.hset('tripperUserOpenId',openid,id);
     client.hset('tripperuser',uid,JSON.stringify(userInfo));
+    res.send({id:'存储完成'});
   })
 })
 
