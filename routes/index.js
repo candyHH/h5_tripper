@@ -47,24 +47,32 @@ router.get('/', function(req, res, next) {
               console.log(' 正常请求---------- ');
               var info = JSON.stringify(res4);
               var userInfo = JSON.parse(res4.text);
-
               // 判断openid是否存在集合
               var openid = userInfo.openid;
-              superagent
-                .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
-                .end(function(err2, res2) {
-                  if (res2 !== undefined && res2.ok) {
-                    res2.body.browserUrl = global.browserURL;
-                    res2.body.nickname = userInfo.nickname;
-                    res.body.openid = userInfo.openid;
-                    res.body.img = userInfo.headimgurl;
-                    var string2= JSON.stringify(res2.body);
-                    console.log('分享成功啦！'+string2);
-                    res.render('welcome',res2.body);
-                  } else {
-                    console.error('微信分享api错误。');
-                  }
-                });
+              console.log(openid);
+              client.hget('tripperUserOpenId',openid,function (err,flag) {
+                if(flag == null || flag == ''){
+                  console.log('不存在');
+                  superagent
+                    .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
+                    .end(function(err2, res2) {
+                      if (res2 !== undefined && res2.ok) {
+                        res2.body.browserUrl = global.browserURL;
+                        res2.body.nickname = userInfo.nickname;
+                        res.body.img = userInfo.headimgurl;
+                        var string2= JSON.stringify(res2.body);
+                        console.log('分享成功啦！'+string2);
+                        res.render('welcome',res2.body);
+                      } else {
+                        console.error('微信分享api错误。');
+                      }
+                    });
+                }else{
+                  console.log('存在');
+                  console.log(flag);
+                }
+                res.render('index', { title: 'Express' });
+              });
           }
       });
 });
@@ -123,15 +131,6 @@ router.get('/addData', function(req, res, next) {
   //存储openid与id对应的关系
   // client.hset('tripperUserOpenId','name','id');
   //查找openId是否存在于hash中
-  client.hget('tripperUserOpenId','openId',function (err,flag) {
-    if(flag == null || flag == ''){
-      console.log('不存在');
-    }else{
-      console.log('存在');
-      console.log(flag);
-    }
-    res.render('addData', { title: 'Express' });
-  });
 });
 
 router.post('/post',function (req,res,next) {
