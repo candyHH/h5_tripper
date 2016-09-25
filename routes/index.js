@@ -184,7 +184,7 @@ router.get('/index', function(req, res, next) {
                             if (res2 !== undefined && res2.ok) {
                               res2.body.browserUrl = global.browserURL;
                               res2.body.selfInfo = selfInfo;
-                              res2.body.shareInfo = shareInfo;
+                              res2.body.shareInfo = JSON.stringify(shareInfo);
                               var string2= JSON.stringify(res2.body);
                               console.log('分享成功啦！'+string2);
                               res.render('index',res2.body);
