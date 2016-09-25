@@ -203,7 +203,7 @@ router.get('/addData', function(req, res, next) {
       var num = uid-1;
       client.hmset('tripperuser',uid,JSON.stringify({
         name:userInfo.nickname[num],
-        img:global.browserURL+'/images/'+userInfo.img[num],
+        img:global.browserURL+'/images/imgMajia/'+userInfo.img[num],
         answer:userInfo.answer[num],
         match:''
       }))
