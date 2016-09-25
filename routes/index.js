@@ -81,7 +81,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/index', function(req, res, next) {
   var shareId = req.query.id;
-  console.log(shareId);
   //微信授权
   if(shareId){
     client.hget('tripperuser',id,function (err,result) {
