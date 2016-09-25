@@ -196,18 +196,18 @@ router.get('/result',function (req,res,next) {
 })
 
 router.get('/addData', function(req, res, next) {
-  // for(var i =0;i<27;i++){
-  //   client.incr('uid');
-  //   client.get('uid',function (err,uid) {
-  //     var num = uid-1;
-  //     client.hmset('tripperuser',uid,JSON.stringify({
-  //       name:userInfo.nickname[num],
-  //       img:global.browserURL+'/images/'+userInfo.img[num],
-  //       answer:userInfo.answer[num],
-  //       match:''
-  //     }))
-  //   })
-  // }
+  for(var i =0;i<27;i++){
+    client.incr('uid');
+    client.get('uid',function (err,uid) {
+      var num = uid-1;
+      client.hmset('tripperuser',uid,JSON.stringify({
+        name:userInfo.nickname[num],
+        img:global.browserURL+'/images/'+userInfo.img[num],
+        answer:userInfo.answer[num],
+        match:''
+      }))
+    })
+  }
   //存储openid与id对应的关系
   // client.hset('tripperUserOpenId','name','id');
 });
