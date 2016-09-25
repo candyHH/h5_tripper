@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hhhh</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <title><%=title%></title>
+    <link rel="stylesheet" href="stylesheets/index.css">
+
+
   </head>
   <body>
-    <h1><%=result %></h1>
-    <p>Welcome to <%=result%></p>
+  	<div class="music-box">
+    	<img class="music-img" src="images/index_2.png">
+    </div>
+
+    <div class="index container">
+    	<img class="index-img" src="images/index_1.png">
+    </div>
+
+    <!-- 第一题 -->
+    <div class="question container hide">
+    	<!-- 顶部头像和题号 -->
+    	<div class="header">
+
+    		<!-- 分享者信息 -->
+    		<div class="share-info">
+    			<img class="potrait-img" src="images/photo.jpg">
+    			<div class="share-text">
+    				<span>杨洋</span>
+    				<p>想要和你一起旅行</p>
+    			</div>
+    		</div>
+
+    		<!-- 题号 需要改变-->
+    		<div class="step-box">
+    			<img class="step-1 step-img" src="images/step_1.png">
+    			<img class="step-2 hide step-img" src="images/step_2.png">
+    			<img class="step-3 hide step-img" src="images/step_3.png">
+    			<img class="step-4 hide step-img" src="images/step_4.png">
+    			<img class="step-5 hide step-img" src="images/step_5.png">
+    			<img class="step-6 hide step-img" src="images/step_6.png">
+    			<img class="step-7 hide step-img" src="images/step_7.png">
+    			<img class="step-8 hide step-img" src="images/step_8.png">
+    			<img class="step-9 hide step-img" src="images/step_9.png">
+    			<img class="step-10 hide step-img" src="images/step_10.png">
+    		</div>
+    		
+    	</div>
+
+    	<!-- 题目 需要改变-->
+    	<div class="topic">
+    		<img class="step-1 question-img" src="images/question_1.png" alt="">
+    		<img class="step-2 hide question-img" src="images/question_2.png" alt="">
+    		<img class="step-3 hide question-img" src="images/question_3.png" alt="">
+    		<img class="step-4 hide question-img" src="images/question_4.png" alt="">
+    		<img class="step-5 hide question-img" src="images/question_5.png" alt="">
+    		<img class="step-6 hide question-img" src="images/question_6.png" alt="">
+    		<img class="step-7 hide question-img" src="images/question_7.png" alt="">
+    		<img class="step-8 hide question-img" src="images/question_8.png" alt="">
+    		<img class="step-9 hide question-img" src="images/question_9.png" alt="">
+    		<img class="step-10 hide question-img" src="images/question_10.png" alt="">
+    	</div>
+
+    	<!-- 选项 需要改变-->
+    	<div class="choice">
+    		<div class="choice-each choice-a" data="1">
+    			<p class="step-1 choice-info a-info" type="1">带亲人啦</p>
+    			<p class="step-2 hide choice-info a-info" type="2">懂得享受去酒店嘛</p>
+    			<p class="step-3 hide choice-info a-info" type="3">朕要用膳</p>
+    			<p class="step-4 hide choice-info a-info" type="4">事半功倍，本宝宝早已计划好</p>
+    			<p class="step-5 hide choice-info a-info" type="5">吃喝玩乐才是王道</p>
+    			<p class="step-6 hide choice-info a-info" type="6">共同进入一起探险</p>
+    			<p class="step-7 hide choice-info a-info" type="7">同生共死共同进退</p>
+    			<p class="step-8 hide choice-info a-info" type="8">老虎</p>
+    			<p class="step-9 hide choice-info a-info" type="9">看过的人和风景</p>
+    			<p class="step-10 hide choice-info a-info" type="10">贝爷</p>
+    		</div>
+    		<div class="choice-each choice-b" data="2">
+    			<p class="step-1 choice-info a-info" type="1">带爱人啦</p>
+    			<p class="step-2 hide choice-info a-info" type="2">微服私访住民宿啦</p>
+    			<p class="step-3 hide choice-info a-info" type="3">朕要就寝</p>
+    			<p class="step-4 hide choice-info a-info" type="4">顺其自然，到了再说吧！</p>
+    			<p class="step-5 hide choice-info a-info" type="5">该走的景点必须走</p>
+    			<p class="step-6 hide choice-info a-info" type="6">一起离开假装没看到</p>
+    			<p class="step-7 hide choice-info a-info" type="7">舍己为友替他垫后</p>
+    			<p class="step-8 hide choice-info a-info" type="8">派</p>
+    			<p class="step-9 hide choice-info a-info" type="9">当地的风情和美食</p>
+    			<p class="step-10 hide choice-info a-info" type="10">哆啦A梦</p>
+    		</div>
+    		<div class="choice-each choice-c" data="3">
+    			<p class="step-1 choice-info a-info" type="1">带朋友啦</p>
+    			<p class="step-2 hide choice-info a-info" type="2">天为被地为床走起</p>
+    			<p class="step-3 hide choice-info a-info" type="3">朕要走走</p>
+    			<p class="step-4 hide choice-info a-info" type="4">静静地等待对方做好</p>
+    			<p class="step-5 hide choice-info a-info" type="5">成为著名的剁手党</p>
+    			<p class="step-6 hide choice-info a-info" type="6">我进去你垫后，你进去我垫后</p>
+    			<p class="step-7 hide choice-info a-info" type="7">我们跑得比熊快就行啦</p>
+    			<p class="step-8 hide choice-info a-info" type="8">豺狗</p>
+    			<p class="step-9 hide choice-info a-info" type="9">我就喜欢出去走走</p>
+    			<p class="step-10 hide choice-info a-info" type="10">奥特曼</p>
+    		</div>
+    		
+    	</div>
+
+    	<!-- 底部动物 -->
+    	<div class="footer"></div>
+    	
+    </div>
+    
   </body>
+  <script src="javascripts/jquery-1.10.1.min.js"></script>
+  <script src="javascripts/tripper.js"></script>
+
+
 </html>
+
