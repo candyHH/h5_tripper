@@ -178,14 +178,13 @@ router.get('/index', function(req, res, next) {
                         result.id = shareId;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
-                        console.log('shareInfo:'+shareInfo);
                         superagent
                           .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
                           .end(function(err2, res2) {
                             if (res2 !== undefined && res2.ok) {
                               res2.body.browserUrl = global.browserURL;
                               res2.body.selfInfo = selfInfo;
-                              res2.body.shareInfo = JSON.stringify(shareInfo);
+                              res2.body.shareInfo = shareInfo;
                               var string2= JSON.stringify(res2.body);
                               console.log('分享成功啦！'+string2);
                               res.render('index',res2.body);
