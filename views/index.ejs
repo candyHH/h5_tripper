@@ -111,7 +111,9 @@
   <script type="text/javascript">
   var shareInfo = '<%=shareInfo%>';
   var selfInfo = '<%=selfInfo%>';
-  selfInfo=JSON.stringify(selfInfo);
+  // selfInfo=JSON.stringify(selfInfo);
+  selfInfo=JSON.parse(selfInfo);
+
 
   alert(selfInfo);
   // console.log(shareInfo);
