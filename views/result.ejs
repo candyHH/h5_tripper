@@ -118,13 +118,24 @@
   <script src="javascripts/avalon.min.js"></script>
   <script src="javascripts/result.js"></script>
   <script>
-        var shareInfo = '<%=shareInfo%>';
-        var selfInfo = '<%=selfInfo%>';
-        var vestInfo = '<%=result%>';
-        console.log(shareInfo);
-        console.log('<%=shareInfo.answer%>');
-        console.log(selfInfo);
-        console.log(vestInfo);
+        // var shareInfo = '<%=shareInfo%>';
+        // var selfInfo = '<%=selfInfo%>';
+        // var vestInfo = '<%=result%>';
+        var selfInfo = {
+            name : '<%=selfInfo.name%>'
+            ,img : '<%=selfInfo.img%>'
+            ,answer : '<%=selfInfo.answer%>'
+            ,id : '<%=selfInfo.id%>'
+        };
+        var shareInfo = {
+            name : '<%=shareInfo.name%>'
+            ,img : '<%=shareInfo.img%>'
+            ,answer : '<%=shareInfo.answer%>'
+            ,id : '<%=shareInfo.id%>'
+        }
+        alert('seflInfo'+selfInfo);
+        alert('shareInfo'+shareInfo);
+       
   </script>
 
 
