@@ -246,7 +246,7 @@ router.get('/index', function(req, res, next) {
 router.get('/result',function (req,res,next) {
   var selfId = req.query.selfid;
   var shareId = req.query.shareid;
-  var flag = req.query.flag;
+  // var flag = req.query.flag;
   var thisUrl = req.url;
   var shareUrl = encodeURIComponent((global.browserURL + thisUrl).split('#')[0]);
   console.log('shareUrl.................'+(global.browserURL + thisUrl).split('#')[0]);
@@ -285,7 +285,7 @@ router.get('/result',function (req,res,next) {
                       res2.body.shareInfo = JSON.stringify(shareInfo);
                       res2.body.selfInfo = JSON.stringify(selfInfo);
                       res2.body.result = result.join('*');
-                      res2.body.flag = flag;
+                      // res2.body.flag = flag;
                       var string2= JSON.stringify(res2.body);
                       console.log('分享成功啦！'+string2);
                       res.render('result',res2.body);
