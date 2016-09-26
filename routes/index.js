@@ -267,9 +267,9 @@ router.get('/result',function (req,res,next) {
               a.length = 10;
               console.log(a);
               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
-                // for(var i = 0;i<result.length;i++){
-                //   result[i] = JSON.parse(result[i]);
-                // };
+                for(var i = 0;i<result.length;i++){
+                  result[i] = JSON.parse(result[i]);
+                };
                 console.log('result.......'+result);
                 var info = {};
                 info.shareInfo = shareInfo;
