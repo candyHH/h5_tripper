@@ -175,9 +175,9 @@ router.get('/index', function(req, res, next) {
                       if(err){
                         console.log(err);
                       }else{
-                        result.id = shareId;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
+                        shareInfo.id = shareId;
                         superagent
                           .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
                           .end(function(err2, res2) {
@@ -201,7 +201,6 @@ router.get('/index', function(req, res, next) {
                       if(err){
                         console.log(err);
                       }else{
-                        // result.id = num;
                         console.log('result...'+result);
                         var shareInfo = JSON.parse(result);
                         shareInfo.id = num;
@@ -282,7 +281,7 @@ router.get('/result',function (req,res,next) {
       }
    })
  }
-  // }else{
+  // else{
   //    var num = Math.floor(Math.random()*27+1);
   //    console.log(num);
   //    client.hget('tripperuser',num,function (err,result) {
