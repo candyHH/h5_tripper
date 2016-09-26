@@ -12,29 +12,29 @@ avalon.ready(function(){
 	vmodel = avalon.define('info', function(vm){
 		vm.shareInfo = shareInfo;
 		vm.vestInfo = vestInfo;
-		vm.match = 0;
+		vm.match = '50%';
 	});
 })
 
 
 // 匹配答案
-var selfAnser = selfInfo.answer;
-var shareAnser = selfInfo.answer;
+// var selfAnser = selfInfo.answer;
+// var shareAnser = selfInfo.answer;
 // var shareAnser = selfInfo.answer.split(',');
 
-for (var i = 0; i < vestInfo.length; i++) {
-	vestInfo[i].answer = vestInfo[i].answer.split(',');
-};
+// for (var i = 0; i < vestInfo.length; i++) {
+// 	vestInfo[i].answer = vestInfo[i].answer.split(',');
+// };
 
-var flag = 0;
+// var flag = 0;
 
-for (var i = 0; i<10; i++) {
-	if (selfAnser[1] == shareAnser[i]) {
-		flag++;
-	};
-};
+// for (var i = 0; i<10; i++) {
+// 	if (selfAnser[1] == shareAnser[i]) {
+// 		flag++;
+// 	};
+// };
 
-vm.match = flag*10 + '%';
+// vm.match = flag*10 + '%';
 
 
 
