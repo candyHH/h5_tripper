@@ -14,7 +14,7 @@ avalon.ready(function(){
 	vmodel = avalon.define('info', function(vm){
 		vm.shareInfo = shareInfo;
 		vm.vestInfo = vestInfo;
-		vm.match = '';
+		// vm.match = '';
 	});
 })
 
@@ -33,22 +33,25 @@ for (var i = 0; i < 10; i++) {
 		flag++;
 	};
 };
-vm.shareInfo.match = flag;
+
+vmodel.shareInfo.match = flag;
 
 // 与10个马甲匹配
 // var num = 0;
-for (var j = 0; i <= vestInfo.length; i++) {
+for (var j = 0; j < vestInfo.length; j++) {
 	var flag = 0;
 	for (var i = 0; i < 10; i++) {
 		if (selfAnser[i] == vestInfo[j].answer[i]) {
 			flag++;
 		};
 	};
-	vm.vestInfo[j].match = flag;
+	vestInfo[j].match = flag;
 };
- vm.vestInfo = vm.vestInfo.sort(function(a,b){
+
+ vmodel.vestInfo = vestInfo.sort(function(a,b){
  	return b.match - a.match;
  })
+
 
 
 
