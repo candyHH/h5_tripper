@@ -5,13 +5,43 @@
 // alert(shareInfo);
 // $('.share-text-name').html(shareInfo.name);
 
+
+
+var vmodel;
+avalon.ready(function(){
+	vmodel = avalon.define('info', function(vm){
+		vm.shareInfo = shareInfo;
+		vm.vestInfo = vestInfo;
+		vm.match = 0;
+	});
+})
+
 // 匹配答案
-// function matchPercent(){
+var selfAnser = selfInfo.answer.split('-');
+var shareAnser = selfInfo.answer.split(',');
 
-// 	var answer1 = selfInfo.answer;
-// 	var answer2 = shareInfo.answer;
+for (var i = 0; i < vestInfo.length; i++) {
+	vestInfo[i].answer = vestInfo[i].answer.split(',');
+};
 
-// }
+var flag = 0;
+
+for (var i = 0; i<10; i++) {
+	if (selfAnser[1] == shareAnser[i]) {
+		flag++;
+	};
+};
+
+vm.match = flag*10 + '%';
+
+
+
+
+
+
+
+
+
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
