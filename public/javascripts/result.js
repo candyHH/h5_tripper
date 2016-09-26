@@ -58,9 +58,7 @@ match_text = match_text.reverse();
 $('.vest').click(function(){
 	$('.open-box').removeClass('hide');
 })
-$('.follow').click(function(){
-	alert('链接到APP下载页面');
-})
+
 $('.close').click(function(){
 	$('.open-box').addClass('hide');
 })

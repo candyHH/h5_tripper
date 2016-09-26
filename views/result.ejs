@@ -45,11 +45,8 @@
             <!-- 马甲头像 -->
             <ul class="vest-list">
                 <li class="vest" v-for="el in vestInfo">
-                    <!-- <img src="images/photo.jpg"> -->
                     <img v-bind:src=el.img>
                 </li>
-      
-       
                 <div class="clear"></div>
             </ul>
             <!-- 按钮 -->
@@ -62,7 +59,6 @@
         <!-- 底部logo -->
         <div class="bottom-logo "></div>
 
-
         <!-- 关注马甲的弹窗 -->
         <div class="open-box container hide" >
             <div class="open">
@@ -73,6 +69,7 @@
                     </div>
                     <div class="follow-text">
                         <p>林志玲</p>
+                        <p>10%</p>
                         <a href="">点击关注</a>
                     </div>
                 <!-- </div> -->
@@ -87,9 +84,8 @@
             <img src="images/share_intro.png">
         </div>
     </div>
-
-
-
+    
+    <% include include_share1.ejs %>
   </body>
 
    <script src="javascripts/jquery-1.10.1.min.js"></script>
