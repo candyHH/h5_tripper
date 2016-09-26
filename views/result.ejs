@@ -111,29 +111,17 @@
         </div>
     </div>
 
-<div>
 
-    <%=JSON.stringify(result)%>
-</div>
 
   </body>
   <script src="javascripts/jquery-1.10.1.min.js"></script>
   <script src="javascripts/avalon.min.js"></script>
   <script src="javascripts/result.js"></script>
   <script>
-        var selfInfo = {
-            name : '<%=selfInfo.name%>'
-            ,img : '<%=selfInfo.img%>'
-            ,answer : '<%=selfInfo.answer%>'
-            ,id : '<%=selfInfo.id%>'
-        };
-        var shareInfo = {
-            name : '<%=shareInfo.name%>'
-            ,img : '<%=shareInfo.img%>'
-            ,answer : '<%=shareInfo.answer%>'
-            ,id : '<%=shareInfo.id%>'
-        };
-        var vestInfo ='<%-JSON.stringify(result)%>';
+
+    var selfInfo = '<%-JSON.stringify(selfInfo)%>';
+    var shareInfo = '<%-JSON.stringify(shareInfo)%>';
+    var vestInfo = '<%-JSON.stringify(result)%>';
 
         // for(var i =0;i<10;i++){
         //   vestInfo[i] = '<%=result[0].name%>';
