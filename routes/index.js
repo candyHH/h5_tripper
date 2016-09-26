@@ -269,9 +269,9 @@ router.get('/result',function (req,res,next) {
               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
                 console.log(result);
                 var info = {};
-                info.shareInfo = shareInfo;
-                info.selfInfo = selfInfo;
-                info.result = result;
+                info.shareInfo = JSON.parse(shareInfo);
+                info.selfInfo = JSON.parse(selfInfo);
+                info.result = JSON.parse(result);
                 console.log(info);
                 res.render('result',{allInfo:info});
               })
@@ -295,11 +295,6 @@ router.get('/result',function (req,res,next) {
   //      }
   //   })
   //  }
-
-
-  // client.hget('tripperuser',shareId,function (err,result){
-  //
-  // })
 
   //获取分享者的答案和答题者的答案
   // res.render('result', { title: 'Express' });
