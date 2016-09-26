@@ -8,13 +8,13 @@ $(document).ready(function(){
 	},2000);
 })
 
-var anser = [];
-var result;
+var answer = [];
+// var result;
 $('.choice-info').click(function(){
 	var type = $(this).attr('type');
 	var data = $(this).parent().attr('data');
 	console.log(data);
-	anser.push(data);
+	answer.push(data);
 	if (type == '1') {
 		$('.step-1').hide('slow');
 		$('.step-2').show('slow');
@@ -44,8 +44,8 @@ $('.choice-info').click(function(){
 		$('.step-10').show('slow');
 	}else if(type == '10') {
 		// alert(anser);
-		console.log(anser);
-		result = anser.join("-");
+		console.log(answer);
+		// result = anser.join("-");
 		// sessionStorage.setItem('result',anser);
 		
 		$.ajax({
@@ -53,7 +53,7 @@ $('.choice-info').click(function(){
 			,url : 'post'
 			,data : {
 				name : selfInfo.nickname
-				,answer : result
+				,answer : answer
 				,img : selfInfo.img
 				,openid : selfInfo.openid
 			}

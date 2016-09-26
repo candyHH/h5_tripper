@@ -16,9 +16,11 @@ avalon.ready(function(){
 	});
 })
 
+
 // 匹配答案
-var selfAnser = selfInfo.answer.split('-');
-var shareAnser = selfInfo.answer.split(',');
+var selfAnser = selfInfo.answer;
+var shareAnser = selfInfo.answer;
+// var shareAnser = selfInfo.answer.split(',');
 
 for (var i = 0; i < vestInfo.length; i++) {
 	vestInfo[i].answer = vestInfo[i].answer.split(',');

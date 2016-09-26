@@ -43,7 +43,7 @@
             <!-- 马甲头像 -->
             <ul class="vest-list">
                 <li class="vest">
-                    <img src="<%=allInfo%>">
+                    <img src="images/photo.jpg">
                 </li>
                 <li class="vest">
                     <img src="images/photo.jpg">
@@ -118,9 +118,13 @@
   <script src="javascripts/avalon.min.js"></script>
   <script src="javascripts/result.js"></script>
   <script>
-        var shareInfo = '<%=allInfo.shareInfo%>';
-        var selfInfo = '<%=allInfo.selfInfo%>';
-        var vestInfo = '<%=allInfo.result%>';
+        var shareInfo = JSON.parse('<%=allInfo.shareInfo%>');
+        var selfInfo = JSON.parse('<%=allInfo.selfInfo%>');
+        var vestInfo = JSON.parse('<%=allInfo.result%>');
+        alert('shareInfo'+shareInfo);
+        alert('selfInfo'+selfInfo);
+        alert('vestInfo'+vestInfo)
+
   </script>
 
 
