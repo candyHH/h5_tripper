@@ -241,9 +241,61 @@ router.get('/index', function(req, res, next) {
 router.get('/result',function (req,res,next) {
   var selfId = req.query.selfid;
   var shareId = req.query.shareid;
+  console.log(selfid);
+  console.log(shareId);
+  if(shareId){
+    client.hget('tripperuser',shareId,function (err,result) {
+      if(err){
+        console.log(err);
+      }else{
+        console.log('result...'+result);
+        var shareInfo = JSON.parse(result);
+        shareInfo.id = num;
+        client.hget('tripperuser',selfId,function (err,selfinfo) {
+          if(err){
+            console.log(err);
+          }else{
+            var selfInfo = JSON.parse(selfinfo);
+            selfInfo.id = selfId;
+            client.get('uid',function (err,uid) {
+              var a=[]
+              for(var i =1;i<uid;i++){
+                a.push[i];
+              }
+              a.sort(function(){return 0.5 - Math.random()});
+              a.length = 10;
+              client.hget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
+                console.log(result);
+                res.render('result');
+              })
+            })
+          }
+        })
+      }
+   })
+ }
+  // }else{
+  //    var num = Math.floor(Math.random()*27+1);
+  //    console.log(num);
+  //    client.hget('tripperuser',num,function (err,result) {
+  //      if(err){
+  //        console.log(err);
+  //      }else{
+  //        // result.id = num;
+  //        console.log('result...'+result);
+  //        var shareInfo = JSON.parse(result);
+  //        shareInfo.id = num;
+  //      }
+  //   })
+  //  }
+
+
+  // client.hget('tripperuser',shareId,function (err,result){
+  //
+  // })
 
   //获取分享者的答案和答题者的答案
-  res.render('result', { title: 'Express' });
+  // res.render('result', { title: 'Express' });
 })
 
 router.get('/addData', function(req, res, next) {
@@ -277,7 +329,7 @@ router.post('/post',function (req,res,next) {
   client.get('uid',function (err,uid) {
     client.hset('tripperUserOpenId',openid,uid);
     client.hset('tripperuser',uid,JSON.stringify(userInfo));
-    res.send({id:'存储完成'});
+    res.send({selfId:uid});
   })
 })
 
