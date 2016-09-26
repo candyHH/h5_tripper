@@ -10,45 +10,44 @@
 var vmodel;
 avalon.ready(function(){
 	vmodel = avalon.define('info', function(vm){
-		vm.shareInfo = {
-			name : shareInfo.name
-			,img : shareInfo.img
-			,answer : shareInfo.answer
-			,id : shareInfo.id
-			,match : 0
-		};
-		// vm.vestInfo = {};
+		vm.shareInfo = shareInfo;
+		vm.vestInfo = vestInfo;
 	});
+
+
+	// 匹配答案
+	// 与分享者匹配
+	var flag = 0;
+	for (var i = 0; i < 10; i++) {
+	    if (selfAnser[i] == shareAnser[i]) {
+	        flag++;
+	    };
+	};
+
+	vmodel.shareInfo.match = flag;
+
+	// 与10个马甲匹配
+	var num = 0;
+	for (var j = 0; j < vestInfo.length; j++) {
+		var flag = 0;
+		for (var i = 0; i < 10; i++) {
+			if (selfAnser[i] == vestInfo[j].answer[i]) {
+				flag++;
+			};
+		};
+		vestInfo[j].match = flag;
+	};
+
+	 vmodel.vestInfo = vestInfo.sort(function(a,b){
+	 	return b.match - a.match;
+	 })
+
+	
+
 })
-vmodel.shareInfo
 
 // alert(selfInfo.answer);
-// 匹配答案
-// 与分享者匹配
-var flag = 0;
-for (var i = 0; i < 10; i++) {
-    if (selfAnser[i] == shareAnser[i]) {
-        flag++;
-    };
-};
 
-vmodel.shareInfo.match = flag;
-
-// 与10个马甲匹配
-// var num = 0;
-// for (var j = 0; j < vestInfo.length; j++) {
-// 	var flag = 0;
-// 	for (var i = 0; i < 10; i++) {
-// 		if (selfAnser[i] == vestInfo[j].answer[i]) {
-// 			flag++;
-// 		};
-// 	};
-// 	vestInfo[j].match = flag;
-// };
-
-//  vmodel.vestInfo = vestInfo.sort(function(a,b){
-//  	return b.match - a.match;
-//  })
 
 
 
