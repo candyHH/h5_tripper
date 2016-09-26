@@ -35,15 +35,21 @@ for (var i = 0; i < 10; i++) {
 };
 vm.shareInfo.match = flag;
 
-// var flag = 0;
+// 与10个马甲匹配
+// var num = 0;
+for (var j = 0; i <= vestInfo.length; i++) {
+	var flag = 0;
+	for (var i = 0; i < 10; i++) {
+		if (selfAnser[i] == vestInfo[j].answer[i]) {
+			flag++;
+		};
+	};
+	vm.vestInfo[j].match = flag;
+};
+ vm.vestInfo = vm.vestInfo.sort(function(a,b){
+ 	return b.match - a.match;
+ })
 
-// for (var i = 0; i<10; i++) {
-// 	if (selfAnser[1] == shareAnser[i]) {
-// 		flag++;
-// 	};
-// };
-
-// vm.match = flag*10 + '%';
 
 
 
