@@ -16,7 +16,7 @@ avalon.ready(function(){
 	});
 })
 
-
+// alert(selfInfo.answer);
 // 匹配答案
 // var selfAnser = selfInfo.answer;
 // var shareAnser = selfInfo.answer;

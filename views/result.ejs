@@ -11,9 +11,9 @@
     <div class="result container">
     	<!-- 顶部头像 -->
     	<div class="result-header">
-			<img class="potrait-img" src="<%=allInfo.shareInfo.img%>">
+			<img class="potrait-img" src="<%=shareInfo.img%>">
 			<div class="share-text">
-				<span class="share-text-name"><%=allInfo.shareInfo.name%></span>
+				<span class="share-text-name"><%=shareInfo.name%></span>
 				<p>想要和你一起旅行</p>
 			</div>
     	</div>
@@ -92,11 +92,11 @@
 
                     <div class="follow-img">
                         <img src="images/photo.jpg">
-                    </div> 
+                    </div>
                     <div class="follow-text">
                         <p>林志玲</p>
                         <a href="">点击关注</a>
-                    </div> 
+                    </div>
                 <!-- </div> -->
                 <!-- 点击关闭弹窗 -->
                 <div class="close">×</div>
@@ -118,12 +118,13 @@
   <script src="javascripts/avalon.min.js"></script>
   <script src="javascripts/result.js"></script>
   <script>
-        var shareInfo = '<%=allInfo.shareInfo%>';
-        var selfInfo = '<%=allInfo.selfInfo%>';
-        var vestInfo = '<%=allInfo.result%>';
-
-        alert(JSON.parse(shareInfo));
-        alert(JSON.parse(vestInfo));
+        var shareInfo = '<%=shareInfo%>';
+        var selfInfo = '<%=selfInfo%>';
+        var vestInfo = '<%=result%>';
+        console.log(shareInfo);
+        console.log('<%=shareInfo.answer%>');
+        console.log(selfInfo);
+        console.log(vestInfo);
   </script>
 
 
