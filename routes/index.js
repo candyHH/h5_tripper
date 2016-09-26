@@ -241,7 +241,7 @@ router.get('/index', function(req, res, next) {
 router.get('/result',function (req,res,next) {
   var selfId = req.query.selfid;
   var shareId = req.query.shareid;
-  console.log(selfid);
+  console.log(selfId);
   console.log(shareId);
   if(shareId){
     client.hget('tripperuser',shareId,function (err,result) {
