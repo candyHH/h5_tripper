@@ -60,7 +60,7 @@ $('.choice-info').click(function(){
 			,dataType : 'json'
 			,success : function(data){
 				alert('yes');
-				window.location.href = 'result?selfid='+data.selfId;
+				window.location.href = 'result?selfid='+data.selfId+'&&'+'shareid='+shareId;
 				// sessionStorage.setItem('shareInfo', JSON.stringify(shareInfo));
 				// sessionStorage.setItem('selfInfo',JSON.stringify(selfInfo));
 
