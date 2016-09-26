@@ -1,4 +1,5 @@
 
+
 var match_text = [
 	'无法分辨你们的差异，系统已经宕机，跪求赶紧出行。',
 	'系统显示差一点你们就能合体出行。',
@@ -25,6 +26,7 @@ match_text = match_text.reverse();
 	shareInfo.match = flag;
 	// console.log(shareInfo.match);
 
+
 	// 与10个马甲匹配
 	var num = 0;
 	for (var j = 0; j < vestInfo.length; j++){
@@ -35,8 +37,8 @@ match_text = match_text.reverse();
 			};
 		};
 		vestInfo[j].match = flag;
-  }
-  vestInfo = vestInfo.sort(function(a,b){
+  	}
+  	vestInfo = vestInfo.sort(function(a,b){
 	 return b.match - a.match;
 	})
 	// console.log(vestInfo,match_text);
@@ -51,15 +53,12 @@ match_text = match_text.reverse();
 	  }
 	})
 
-// alert(selfInfo.answer);
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
 	$('.open-box').removeClass('hide');
 })
-$('.follow').click(function(){
-	alert('链接到APP下载页面');
-})
+
 $('.close').click(function(){
 	$('.open-box').addClass('hide');
 })

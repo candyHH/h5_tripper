@@ -12,6 +12,7 @@
     <div class="result container">
     	<!-- 顶部头像 -->
     	<div class="result-header">
+
   			<img class="potrait-img" v-bind:src=shareInfo.img>
   			<div class="share-text">
   				<span class="share-text-name">{{shareInfo.name}}</span>
@@ -21,7 +22,17 @@
 
         <!-- 匹配文案框 -->
         <div class="match-box">
-            <p class="match-text match-{{shareInfo.match}}">{{match_text}}</p>
+            <p v-if="shareInfo.match=='10'" class="match-text match10">无法分辨你们的差异，系统已经宕机，跪求赶紧出行。</p>
+            <p v-if="shareInfo.match=='9'" class="match-text match9 ">系统显示差一点你们就能合体出行。</p>
+            <p v-if="shareInfo.match=='8'" class="match-text match8 ">还可以，缺一点也可以一起出行嘛~</p>
+            <p v-if="shareInfo.match=='7'" class="match-text match7 ">另外的30%大概是留在宇宙黑洞了。</p>
+            <p v-if="shareInfo.match=='6'" class="match-text match6 ">踏上及格线，友情勉强稳固住了！</p>
+            <p v-if="shareInfo.match=='5'" class="match-text match5 ">系统显示要么你的灵魂要么ta的肉体，还在旅途之中忘记归来。</p>
+            <p v-if="shareInfo.match=='4'" class="match-text match4 ">友情破裂拳重重袭来！接受旅途中的狂风吧！</p>
+            <p v-if="shareInfo.match=='3'" class="match-text match3 ">这靠谱程度简直岌岌可危，然而还可以抢救一下！</p>
+            <p v-if="shareInfo.match=='2'" class="match-text match2 ">不好意思，你们只是路过一下。</p>
+            <p v-if="shareInfo.match=='1'" class="match-text match1 ">系统显示你们离革命的成功友情仿佛破裂啊。</p>
+            <p v-if="shareInfo.match=='0'" class="match-text match0 ">推荐你们分开旅行</p>
         </div>
 
         <!-- 路过的人 -->
@@ -48,7 +59,6 @@
         <!-- 底部logo -->
         <div class="bottom-logo "></div>
 
-
         <!-- 关注马甲的弹窗 -->
         <div class="open-box container hide" >
             <div class="open">
@@ -59,6 +69,7 @@
                     </div>
                     <div class="follow-text">
                         <p>林志玲</p>
+                        <p>10%</p>
                         <a href="">点击关注</a>
                     </div>
                 <!-- </div> -->
@@ -73,13 +84,13 @@
             <img src="images/share_intro.png">
         </div>
     </div>
-
-
-
+    
+    <% include include_share1.ejs %>
   </body>
 
-  <script src="javascripts/jquery-1.10.1.min.js"></script>
+   <script src="javascripts/jquery-1.10.1.min.js"></script>
   <script>
+
     var selfInfo = JSON.parse('<%-selfInfo%>');
     var shareInfo = JSON.parse('<%-shareInfo%>');
     var vestInfo = '<%-result%>';
@@ -87,14 +98,20 @@
     for(var i =0;i<vestInfo.length;i++){
       vestInfo[i] = JSON.parse(vestInfo[i]);
     }
+    // console.log(selfInfo.answer);//
+    // console.log(shareInfo.answer);//
+    // console.log(vestInfo[0].answer);//
 
     var selfAnser = selfInfo.answer.split('-');
     var shareAnser = shareInfo.answer.split('-');
     for (var i = 0; i < vestInfo.length; i++) {
-        vestInfo[i].answer = vestInfo[i].answer.split('-');
+        vestInfo[i].answer = vestInfo[i].answer.split(',');
     };
-  </script>
 
-  <script src="javascripts/result.js"></script>
+
+</script>
+
+
+<script src="javascripts/result.js"></script>
 
 </html>
