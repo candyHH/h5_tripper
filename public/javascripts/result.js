@@ -53,9 +53,15 @@ new Vue({
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
-	$('.open-box').addClass('hide');
-	$(this).next('div').removeClass('hide');
-
+	var i = $(this).child().attr('value');
+	var name = vestInfo[i].name;
+	var match = vestInfo[i].match * 10 + '%';
+	console.log('index......'+i);
+	console.log(name);
+	console.log(match);
+	$('.open-box').removeClass('hide');
+	$('.vest-name').html(name);
+	$('.vest-match').html(match);
 })
 
 $('.close').click(function(){
