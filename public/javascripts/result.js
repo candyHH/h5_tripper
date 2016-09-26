@@ -56,7 +56,7 @@ new Vue({
 	console.log('index...'+index);
 	var url = "url(../images/result_" + index + ".png)";
 	console.log('url....'+url);
-	$('.match-box').css('background-image':'url');
+	$('.match-box').css({'background-image':'url'});
 // }
 // bg();
 
