@@ -53,9 +53,9 @@ img{
 
 /*顶部头像和题号*/
 .result-header{
-	height: 17%;
+	height: 13%;
 	/*background-color: yellow;*/
-	padding: 13% 27% 4% 8%;
+	padding: 9% 27% 4% 8%;
 	text-align: left;
 
 }
@@ -92,7 +92,7 @@ img{
 
 /*路过的人*/
 .passby-box{
-	height: 35%;
+	height: 39%;
 	/*background-color: blue;*/
 }
 .passby-text{

@@ -45,7 +45,7 @@ $('.choice-info').click(function(){
 	}else if(type == '10') {
 		// alert(anser);
 		console.log(answer);
-		// result = anser.join("-");
+		answer = answer.join("-");
 		// sessionStorage.setItem('result',anser);
 		
 		$.ajax({
