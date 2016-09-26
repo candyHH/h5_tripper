@@ -287,7 +287,7 @@ router.get('/result',function (req,res,next) {
   //        shareInfo.id = num;
   //      }
   //   })
-   }
+  //  }
 
 
   // client.hget('tripperuser',shareId,function (err,result){
