@@ -11,9 +11,9 @@
     <div class="result container">
     	<!-- 顶部头像 -->
     	<div class="result-header">
-			<img class="potrait-img" src="images/photo.jpg">
+			<img class="potrait-img" src="<%shareInfo.img%>">
 			<div class="share-text">
-				<span>杨洋</span>
+				<span class="share-text-name"><%=shareInfo.name%></span>
 				<p>想要和你一起旅行</p>
 			</div>
     	</div>
@@ -88,16 +88,16 @@
         <!-- 关注马甲的弹窗 -->
         <div class="open-box container hide" >
             <div class="open">
-                <div class="follow">
+                <!-- <div class="follow"> -->
 
                     <div class="follow-img">
                         <img src="images/photo.jpg">
                     </div> 
-                    <div>
+                    <div class="follow-text">
                         <p>林志玲</p>
                         <a href="">点击关注</a>
                     </div> 
-                </div>
+                <!-- </div> -->
                 <!-- 点击关闭弹窗 -->
                 <div class="close">×</div>
 

@@ -1,9 +1,17 @@
 
-var selfInfo = sessionStorage.getItem('selfInfo');
-var shareInfo = sessionStorage.getItem('shareInfo');
-alert(selfInfo);
-alert(shareInfo);
+// var selfInfo = sessionStorage.getItem('selfInfo');
+// var shareInfo = sessionStorage.getItem('shareInfo');
+// alert(selfInfo);
+// alert(shareInfo);
+// $('.share-text-name').html(shareInfo.name);
 
+// 匹配答案
+// function matchPercent(){
+
+// 	var answer1 = selfInfo.answer;
+// 	var answer2 = shareInfo.answer;
+
+// }
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
