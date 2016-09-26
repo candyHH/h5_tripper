@@ -51,12 +51,14 @@ new Vue({
 })
 
 // 更换匹配文案背景图
-function bg(){
+// function bg(){
 	var index = $('.match-text').attr('value');
+	console.log('index...'+index);
 	var url = "url(../images/result_" + index + ".png)";
+	console.log('url....'+url);
 	$('.match-box').css('background-image','url');
-}
-bg();
+// }
+// bg();
 
 
 // 点击马甲头像，跳出弹框
