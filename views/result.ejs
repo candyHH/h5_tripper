@@ -22,7 +22,7 @@
 
         <!-- 匹配文案框 -->
         <div class="match-box">
-            <p class="match-test match-{{shareInfo.match}}">{{match_text}}</p>
+            <p class="match-text match-{{shareInfo.match}}">{{match_text}}</p>
         </div>
 
         <!-- 路过的人 -->
@@ -35,26 +35,7 @@
             <!-- 马甲头像 -->
             <ul class="vest-list">
                 <li class="vest" v-for="el in vestInfo">
-                    <img v-bind:src=el.img>
-
-                    <div class="open-box container hide" >
-                        <div class="open">
-                            <!-- <div class="follow"> -->
-                                <div class="follow-img">
-                                    <img src="images/photo.jpg">
-                                </div>
-                                <div class="follow-text">
-                                    <p>{{el.name}}</p>
-                                    <p>{{el.match}}</p>
-                                    <a href="">点击关注</a>
-                                </div>
-                            <!-- </div> -->
-                            <!-- 点击关闭弹窗 -->
-                            <div class="close">×</div>
-                        </div>
-                    </div>
-
-
+                    <img value=$index v-bind:src=el.img>
                 </li>
                 <div class="clear"></div>
             </ul>
@@ -69,6 +50,22 @@
         <div class="bottom-logo "></div>
 
         <!-- 关注马甲的弹窗 -->
+        <div class="open-box container hide" >
+            <div class="open">
+                <!-- <div class="follow"> -->
+                    <div class="follow-img">
+                        <img src="images/photo.jpg">
+                    </div>
+                    <div class="follow-text">
+                        <p>{{el.name}}</p>
+                        <p>{{el.match}}</p>
+                        <a href="">点击关注</a>
+                    </div>
+                <!-- </div> -->
+                <!-- 点击关闭弹窗 -->
+                <div class="close">×</div>
+            </div>
+        </div>
         
 
         <!-- 分享引导蒙层 -->
