@@ -53,7 +53,7 @@ new Vue({
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
-	var i = $(this).child().attr('value');
+	var i = $(this).next('img').attr('value');
 	var name = vestInfo[i].name;
 	var match = vestInfo[i].match * 10 + '%';
 	console.log('index......'+i);
