@@ -3,19 +3,20 @@
 // var shareInfo = sessionStorage.getItem('shareInfo');
 // alert(selfInfo);
 // alert(shareInfo);
-// $('.share-text-name').html(shareInfo.name);
+$('.share-text-name').html(shareInfo.name);
 
 
 
-var vmodel;
-avalon.ready(function(){
-	vmodel = avalon.define('info', function(vm){
-		vm.shareInfo = shareInfo;
-		vm.vestInfo = vestInfo;
-		vm.match = '50%';
-	});
-})
+// var vmodel;
+// avalon.ready(function(){
+// 	vmodel = avalon.define('info', function(vm){
+// 		vm.shareInfo = shareInfo;
+// 		vm.vestInfo = vestInfo;
+// 		vm.match = '50%';
+// 	});
+// })
 
+console.log()
 // alert(selfInfo.answer);
 // 匹配答案
 // var selfAnser = selfInfo.answer;
