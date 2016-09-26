@@ -2,8 +2,8 @@
 
 
 
-  $('.share-text-name').html(shareInfo.name);
-  $('.potrait-img').attr('src',shareInfo.img);
+  // $('.share-text-name').html(shareInfo.name);
+  // $('.potrait-img').attr('src',shareInfo.img);
 
 
 
@@ -45,19 +45,6 @@ avalon.ready(function(){
 	
 
 })
-
-// alert(selfInfo.answer);
-
-
-
-
-
-
-
-
-
-
-
 
 
 // 点击马甲头像，跳出弹框
