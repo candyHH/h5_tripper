@@ -11,11 +11,11 @@
     <div class="result container">
     	<!-- 顶部头像 -->
     	<div class="result-header">
-			<img class="potrait-img" >
-			<div class="share-text">
-				<span class="share-text-name"></span>
-				<p>想要和你一起旅行</p>
-			</div>
+        <img class="potrait-img" src="<%=shareInfo.img%>">
+  			<div class="share-text">
+  				<span class="share-text-name"></span>
+  				<p>想要和你一起旅行</p>
+  			</div>
     	</div>
 
         <!-- 匹配文案框 -->
@@ -116,7 +116,7 @@
   </body>
   <script src="javascripts/jquery-1.10.1.min.js"></script>
   <script src="javascripts/avalon.min.js"></script>
-  
+
   <script>
 
     var selfInfo = JSON.parse('<%-selfInfo%>');
@@ -129,7 +129,7 @@
     console.log(selfInfo.answer);//
     console.log(shareInfo.answer);//
     console.log(vestInfo[0].answer);//
-  
+
 </script>
 <script src="javascripts/result.js"></script>
 

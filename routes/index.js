@@ -226,9 +226,15 @@ router.get('/index', function(req, res, next) {
                   console.log('存在');
                   console.log(selfid);
                   if(shareId){
-                    res.redirect('result?selfid='+selfid+'&&shareid='+shareId);
+                    if(shareId == selfid){
+                      var flag = 1;
+                    }else{
+                      flag = 0;
+                    }
+                    res.redirect('result?selfid='+selfid+'&&shareid='+shareId+'&&flag='+flag);
                   }else{
-                    res.redirect('result?selfid='+selfid);
+                    var flag =0;
+                    res.redirect('result?selfid='+selfid+'&&flag='+flag);
                   }
                 }
               });
@@ -240,6 +246,7 @@ router.get('/index', function(req, res, next) {
 router.get('/result',function (req,res,next) {
   var selfId = req.query.selfid;
   var shareId = req.query.shareid;
+  var flag = req.query.flag;
   console.log(selfId);
   console.log(shareId);
   if(shareId){
@@ -268,6 +275,7 @@ router.get('/result',function (req,res,next) {
               console.log(a);
               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
                 var info = {};
+                info.flag = flag;
                 info.shareInfo = JSON.stringify(shareInfo);
                 info.selfInfo = JSON.stringify(selfInfo);
                 info.result = result.join('*');
@@ -281,20 +289,47 @@ router.get('/result',function (req,res,next) {
       }
    })
  }
-  // else{
-  //    var num = Math.floor(Math.random()*27+1);
-  //    console.log(num);
-  //    client.hget('tripperuser',num,function (err,result) {
-  //      if(err){
-  //        console.log(err);
-  //      }else{
-  //        // result.id = num;
-  //        console.log('result...'+result);
-  //        var shareInfo = JSON.parse(result);
-  //        shareInfo.id = num;
-  //      }
-  //   })
-  //  }
+  else{
+     var num = Math.floor(Math.random()*27+1);
+     console.log(num);
+     client.hget('tripperuser',num,function (err,shareInfo) {
+       if(err){
+         console.log(err);
+       }else{
+         var shareInfo = JSON.parse(shareInfo);
+         shareInfo.id = num;
+         console.log('shareInfo...'+shareInfo);
+         client.hget('tripperuser',selfId,function (err,selfinfo) {
+           if(err){
+             console.log(err);
+           }else{
+             var selfInfo = JSON.parse(selfinfo);
+             selfInfo.id = selfId;
+             console.log('selfInfo...'+selfInfo);
+             client.get('uid',function (err,uid) {
+               var a=[];
+               console.log('uid..........'+uid);
+               for(var i =1;i<uid;i++){
+                 a.push(i);
+               }
+               a.sort(function(){return 0.5 - Math.random()});
+               a.length = 10;
+               console.log(a);
+               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
+                 var info = {};
+                 info.shareInfo = JSON.stringify(shareInfo);
+                 info.selfInfo = JSON.stringify(selfInfo);
+                 info.result = result.join('*');
+                 console.log(info.result);
+                 console.log('result.......'+typeof(info.result));
+                 res.render('result',info);
+               })
+             })
+           }
+         })
+      }
+    })
+   }
 
   //获取分享者的答案和答题者的答案
   // res.render('result', { title: 'Express' });
