@@ -15,48 +15,47 @@ var match_text = [
 ]
 match_text = match_text.reverse();
 
-	// 匹配答案
-	// 与分享者匹配
+// 匹配答案
+// 与分享者匹配
+var flag = 0;
+for (var i = 0; i < 10; i++) {
+    if (selfAnser[i] == shareAnser[i]) {
+        flag++;
+    };
+};
+shareInfo.match = flag;
+
+// 与10个马甲匹配
+var num = 0;
+for (var j = 0; j < vestInfo.length; j++){
 	var flag = 0;
 	for (var i = 0; i < 10; i++) {
-	    if (selfAnser[i] == shareAnser[i]) {
-	        flag++;
-	    };
-	};
-	shareInfo.match = flag;
-	// console.log(shareInfo.match);
-
-
-	// 与10个马甲匹配
-	var num = 0;
-	for (var j = 0; j < vestInfo.length; j++){
-		var flag = 0;
-		for (var i = 0; i < 10; i++) {
-			if (selfAnser[i] == vestInfo[j].answer[i]) {
-				flag++;
-			};
+		if (selfAnser[i] == vestInfo[j].answer[i]) {
+			flag++;
 		};
-		vestInfo[j].match = flag;
-  	}
-  	vestInfo = vestInfo.sort(function(a,b){
-	 return b.match - a.match;
-	})
-	// console.log(vestInfo,match_text);
+	};
+	vestInfo[j].match = flag;
+	}
+	vestInfo = vestInfo.sort(function(a,b){
+ return b.match - a.match;
+})
 
-	new Vue({
-	  el: '#info',
-	  data: {
-	    message: 'Hello Vue.js!',
-			shareInfo: shareInfo,
-			vestInfo: vestInfo,
-			match_text: match_text[shareInfo.match]
-	  }
-	})
+new Vue({
+  el: '#info',
+  data: {
+    message: 'Hello Vue.js!',
+		shareInfo: shareInfo,
+		vestInfo: vestInfo,
+		match_text: match_text[shareInfo.match]
+  }
+})
 
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
-	$('.open-box').removeClass('hide');
+	$('.open-box').addClass('hide');
+	$('.this').next(div).removeClass('hide');
+
 })
 
 $('.close').click(function(){
