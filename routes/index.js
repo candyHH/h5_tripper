@@ -250,7 +250,7 @@ router.get('/result',function (req,res,next) {
       }else{
         console.log('result...'+result);
         var shareInfo = JSON.parse(result);
-        shareInfo.id = num;
+        shareInfo.id = shareId;
         client.hget('tripperuser',selfId,function (err,selfinfo) {
           if(err){
             console.log(err);
