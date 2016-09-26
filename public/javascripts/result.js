@@ -57,12 +57,14 @@ $('.vest').click(function(){
 	console.log('i.'+i);
 	var name = vestInfo[i].name;
 	console.log(name);
+	var src = vestInfo[i].img;
 
 	var match = vestInfo[i].match * 10 + '%';
 		console.log(match);
 	$('.open-box').removeClass('hide');
 	$('.vest-name').html(name);
 	$('.vest-match').html(match);
+	$('.vest-img').attr('src',src);
 })
 
 $('.close').click(function(){
