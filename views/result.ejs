@@ -11,7 +11,7 @@
     <div class="result container">
     	<!-- 顶部头像 -->
     	<div class="result-header">
-			<img class="potrait-img" src="<%=shareInfo.img%>">
+			<img class="potrait-img" >
 			<div class="share-text">
 				<span class="share-text-name"></span>
 				<p>想要和你一起旅行</p>
@@ -129,6 +129,8 @@
     console.log(selfInfo.answer);//
     console.log(shareInfo.answer);//
     console.log(vestInfo[0].answer);//
+    $('.share-text-name').html(shareInfo.name);
+    $('.potrait-img').attr('src',shareInfo.img);
 </script>
 
 

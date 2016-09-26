@@ -3,7 +3,8 @@
 // var shareInfo = sessionStorage.getItem('shareInfo');
 // alert(selfInfo);
 // alert(shareInfo);
-$('.share-text-name').html(shareInfo.name);
+
+
 
 
 
