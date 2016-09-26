@@ -128,6 +128,14 @@
     console.log(selfInfo.answer);//
     console.log(shareInfo.answer);//
     console.log(vestInfo[0].answer);//
+
+    var selfAnser = selfInfo.answer.split('-');
+    var shareAnser = shareInfo.answer.split('-');
+    for (var i = 0; i < vestInfo.length; i++) {
+        vestInfo[i].answer = vestInfo[i].answer.split(',');
+    };
+
+
   
 </script>
 
