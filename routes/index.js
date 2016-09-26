@@ -281,19 +281,19 @@ router.get('/result',function (req,res,next) {
       }
    })
  }
-  }else{
-     var num = Math.floor(Math.random()*27+1);
-     console.log(num);
-     client.hget('tripperuser',num,function (err,result) {
-       if(err){
-         console.log(err);
-       }else{
-         // result.id = num;
-         console.log('result...'+result);
-         var shareInfo = JSON.parse(result);
-         shareInfo.id = num;
-       }
-    })
+  // else{
+  //    var num = Math.floor(Math.random()*27+1);
+  //    console.log(num);
+  //    client.hget('tripperuser',num,function (err,result) {
+  //      if(err){
+  //        console.log(err);
+  //      }else{
+  //        // result.id = num;
+  //        console.log('result...'+result);
+  //        var shareInfo = JSON.parse(result);
+  //        shareInfo.id = num;
+  //      }
+  //   })
    }
 
   //获取分享者的答案和答题者的答案
