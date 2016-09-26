@@ -273,7 +273,7 @@ router.get('/result',function (req,res,next) {
                 info.selfInfo = selfInfo;
                 info.result = result;
                 console.log(info);
-                res.render('result',allInfo:info);
+                res.render('result',{allInfo:info});
               })
             })
           }
