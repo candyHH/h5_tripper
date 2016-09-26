@@ -275,6 +275,7 @@ router.get('/result',function (req,res,next) {
                 info.shareInfo = shareInfo;
                 info.selfInfo = selfInfo;
                 info.result = result+'';
+                console.log(info.result);
                 res.render('result',info);
               })
             })
@@ -316,8 +317,6 @@ router.get('/addData', function(req, res, next) {
     })
   }
   res.render('addData');
-  //存储openid与id对应的关系
-  // client.hset('tripperUserOpenId','name','id');
 });
 
 router.post('/post',function (req,res,next) {
