@@ -118,15 +118,12 @@
   <script src="javascripts/avalon.min.js"></script>
   <script src="javascripts/result.js"></script>
   <script>
-  alert('hhhhh');
-        var shareInfo = JSON.parse('<%=allInfo.shareInfo%>');
-        var selfInfo = JSON.parse('<%=allInfo.selfInfo%>');
-        var vestInfo = JSON.parse('<%=allInfo.result%>');
-        alert('ooooo');
-        alert('shareInfo'+shareInfo);
-        alert('selfInfo'+selfInfo);
-        alert('vestInfo'+vestInfo)
+        var shareInfo = '<%=allInfo.shareInfo%>';
+        var selfInfo = '<%=allInfo.selfInfo%>';
+        var vestInfo = '<%=allInfo.result%>';
 
+        alert(JSON.parse(shareInfo));
+        alert(JSON.parse(vestInfo));
   </script>
 
 
