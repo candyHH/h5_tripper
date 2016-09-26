@@ -4,7 +4,8 @@
 // alert(selfInfo);
 // alert(shareInfo);
 
-
+  $('.share-text-name').html(shareInfo.name);
+    $('.potrait-img').attr('src',shareInfo.img);
 
 
 
