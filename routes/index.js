@@ -287,7 +287,7 @@ router.get('/result',function (req,res,next) {
                       res2.body.result = result.join('*');
                       // res2.body.flag = flag;
                       var string2= JSON.stringify(res2.body);
-                      console.log('分享成功啦！'+string2);
+                      console.log('分享成功啦！');
                       res.render('result',res2.body);
                     } else {
                       console.error('微信分享api错误。');

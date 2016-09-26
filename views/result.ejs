@@ -85,13 +85,15 @@
         </div>
     </div>
 
-    
+
   </body>
 
    <script src="javascripts/jquery-1.10.1.min.js"></script>
-   <%include include_share1.ejs %>
+   <script type="text/javascript">
+     alert('hhhh');
+   </script>
+   <%include include_share1.ejs%>
   <script>
-
     var selfInfo = JSON.parse('<%-selfInfo%>');
     var shareInfo = JSON.parse('<%-shareInfo%>');
     var vestInfo = '<%-result%>';
@@ -111,8 +113,6 @@
 
 
 </script>
-
-
 <script src="javascripts/result.js"></script>
 
 </html>
