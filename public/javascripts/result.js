@@ -9,25 +9,31 @@
 
 
 
-// var vmodel;
-// avalon.ready(function(){
-// 	vmodel = avalon.define('info', function(vm){
-// 		vm.shareInfo = shareInfo;
-// 		vm.vestInfo = vestInfo;
-// 		vm.match = '50%';
-// 	});
-// })
+var vmodel;
+avalon.ready(function(){
+	vmodel = avalon.define('info', function(vm){
+		vm.shareInfo = shareInfo;
+		vm.vestInfo = vestInfo;
+		vm.match = '';
+	});
+})
 
-console.log()
 // alert(selfInfo.answer);
 // 匹配答案
-// var selfAnser = selfInfo.answer;
-// var shareAnser = selfInfo.answer;
-// var shareAnser = selfInfo.answer.split(',');
+var selfAnser = selfInfo.answer.split('-');
+var shareAnser = shareInfo.answer.split('-');
+for (var i = 0; i < vestInfo.length; i++) {
+	vestInfo[i].answer = vestInfo[i].answer.split(',');
+};
 
-// for (var i = 0; i < vestInfo.length; i++) {
-// 	vestInfo[i].answer = vestInfo[i].answer.split(',');
-// };
+// 与分享者匹配
+var flag = 0;
+for (var i = 0; i < 10; i++) {
+	if (selfAnser[i] == shareAnser[i]) {
+		flag++;
+	};
+};
+vm.shareInfo.match = flag;
 
 // var flag = 0;
 
