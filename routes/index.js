@@ -294,7 +294,7 @@ router.get('/result',function (req,res,next) {
   //        shareInfo.id = num;
   //      }
   //   })
-   }
+  //  }
 
   //获取分享者的答案和答题者的答案
   // res.render('result', { title: 'Express' });
