@@ -247,6 +247,9 @@ router.get('/result',function (req,res,next) {
   var selfId = req.query.selfid;
   var shareId = req.query.shareid;
   var flag = req.query.flag;
+  var thisUrl = req.url;
+  var shareUrl = encodeURIComponent((global.browserURL + thisUrl).split('#')[0]);
+  console.log('shareUrl.................'+(global.browserURL + thisUrl).split('#')[0]);
   console.log(selfId);
   console.log(shareId);
   if(shareId){
@@ -281,7 +284,18 @@ router.get('/result',function (req,res,next) {
                 info.result = result.join('*');
                 console.log(info.result);
                 console.log('result.......'+typeof(info.result));
-                res.render('result',info);
+                superagent
+                  .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
+                  .end(function(err2, res2) {
+                    if (res2 !== undefined && res2.ok) {
+                      res2.body.browserUrl = global.browserURL;
+                      var string2= JSON.stringify(res2.body);
+                      console.log('分享成功啦！'+string2);
+                      rres.render('result',info,res2.body);
+                    } else {
+                      console.error('微信分享api错误。');
+                    }
+                  });  
               })
             })
           }
@@ -322,6 +336,20 @@ router.get('/result',function (req,res,next) {
                  info.result = result.join('*');
                  console.log(info.result);
                  console.log('result.......'+typeof(info.result));
+                 superagent
+                   .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
+                   .end(function(err2, res2) {
+                     if (res2 !== undefined && res2.ok) {
+                       res2.body.browserUrl = global.browserURL;
+                       res2.body.selfInfo = selfInfo;
+                       res2.body.shareInfo = shareInfo;
+                       var string2= JSON.stringify(res2.body);
+                       console.log('分享成功啦！'+string2);
+                       res.render('index',res2.body);
+                     } else {
+                       console.error('微信分享api错误。');
+                     }
+                   });
                  res.render('result',info);
                })
              })
