@@ -291,11 +291,11 @@ router.get('/result',function (req,res,next) {
                       res2.body.browserUrl = global.browserURL;
                       var string2= JSON.stringify(res2.body);
                       console.log('分享成功啦！'+string2);
-                      rres.render('result',info,res2.body);
+                      res.render('result',info,res2.body);
                     } else {
                       console.error('微信分享api错误。');
                     }
-                  });  
+                  });
               })
             })
           }
