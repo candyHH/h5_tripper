@@ -54,7 +54,7 @@ new Vue({
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
 	$('.open-box').addClass('hide');
-	$('.this').next(div).removeClass('hide');
+	$(this).next('div').removeClass('hide');
 
 })
 
