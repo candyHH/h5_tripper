@@ -119,10 +119,12 @@
   <script src="javascripts/result.js"></script>
   <script>
 
-    var selfInfo = '<%-JSON.stringify(selfInfo)%>';
-    var shareInfo = '<%-JSON.stringify(shareInfo)%>';
-    var vestInfo = '<%-JSON.stringify(result)%>';
-      console.log(vestInfo);
+    var selfInfo = JSON.parse('<%-selfInfo%>');
+    var shareInfo = JSON.parse('<%-shareInfo%>');
+    var vestInfo = '<%-result%>';
+    console.log(selfInfo);
+    console.log(shareInfo);
+
          </script>
 
 

@@ -248,14 +248,15 @@ router.get('/result',function (req,res,next) {
       if(err){
         console.log(err);
       }else{
-        var shareInfo = shareInfo;
+        var shareInfo = JSON.parse(shareInfo);
         console.log('shareInfo...'+shareInfo);
         shareInfo.id = shareId;
         client.hget('tripperuser',selfId,function (err,selfinfo) {
           if(err){
             console.log(err);
           }else{
-            var selfInfo = selfinfo;
+            var selfInfo = JSON.parse(selfinfo);
+            selfInfo.id = selfId;
             console.log('selfInfo...'+selfInfo);
             client.get('uid',function (err,uid) {
               var a=[];
@@ -269,10 +270,9 @@ router.get('/result',function (req,res,next) {
               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
                 console.log('result.......'+result);
                 var info = {};
-                info.shareInfo = shareInfo;
-                info.selfInfo = selfInfo;
+                info.shareInfo = JSON.stringify(shareInfo);
+                info.selfInfo = JSON.stringify(selfInfo);
                 info.result = result;
-                console.log('info.......................................'+info);
                 res.render('result',info);
               })
             })
