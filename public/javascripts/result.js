@@ -52,7 +52,9 @@ new Vue({
 
 // 更换匹配文案背景图
 var index = $('.match-text').attr('value');
-$('.match-box').css('background-image','"url(../images/result_" + index + ".png)"')
+
+var url = "url(../images/result_" + index + ".png)";
+$('.match-box').css('background-image','url')
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
