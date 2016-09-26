@@ -268,11 +268,12 @@ router.get('/result',function (req,res,next) {
               a.length = 10;
               console.log(a);
               client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
-                console.log('result.......'+result);
                 var info = {};
                 info.shareInfo = JSON.stringify(shareInfo);
                 info.selfInfo = JSON.stringify(selfInfo);
-                info.result = result;
+                info.result = result.join('*');
+                console.log(info.result);
+                console.log('result.......'+typeof(info.result));
                 res.render('result',info);
               })
             })

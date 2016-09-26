@@ -122,8 +122,11 @@
     var selfInfo = JSON.parse('<%-selfInfo%>');
     var shareInfo = JSON.parse('<%-shareInfo%>');
     var vestInfo = '<%-result%>';
-    console.log(selfInfo);
-    console.log(shareInfo);
+    vestInfo = vestInfo.split('*');
+    for(var i =0;i<vestInfo.length;i++){
+      vestInfo[i] = JSON.parse(vestInfo[i]);
+    }
+    console.log(vestInfo[0].name);
     console.log(vestInfo.length);
 
          </script>
