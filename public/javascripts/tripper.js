@@ -52,7 +52,7 @@ $('.choice-info').click(function(){
 		console.log(answer);
 		answer = answer.join("-");
 		// sessionStorage.setItem('result',anser);
-		
+
 		$.ajax({
 			type : 'post'
 			,url : 'post'
@@ -65,7 +65,7 @@ $('.choice-info').click(function(){
 			,dataType : 'json'
 			,success : function(data){
 				alert('yes');
-				window.location.href = 'result?selfid='+data.selfId+'&&'+'shareid='+shareId;
+				window.location.href = 'result?selfid='+data.selfId+'&&shareid='+shareId+'&&flag=0';
 				// sessionStorage.setItem('shareInfo', JSON.stringify(shareInfo));
 				// sessionStorage.setItem('selfInfo',JSON.stringify(selfInfo));
 

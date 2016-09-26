@@ -2,10 +2,6 @@
 
 
 
-  // $('.share-text-name').html(shareInfo.name);
-  // $('.potrait-img').attr('src',shareInfo.img);
-
-
 
 var vmodel;
 avalon.ready(function(){
@@ -43,6 +39,11 @@ avalon.ready(function(){
 	 })
 
 	
+
+})
+
+
+new Vue({
 
 })
 
