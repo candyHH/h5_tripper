@@ -7,6 +7,11 @@ $(document).ready(function(){
 		$('.question').show('slow');
 	},2000);
 })
+// 点击音乐开关,音乐开启，图片转动，音乐暂停，图片复位
+// $('.music-box').click(function(){
+// 	$('#audio').
+
+// })
 
 var answer = [];
 // var result;
