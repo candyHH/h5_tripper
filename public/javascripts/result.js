@@ -7,14 +7,14 @@
 
 
 
-var vmodel;
-avalon.ready(function(){
-	vmodel = avalon.define('info', function(vm){
-		vm.shareInfo = shareInfo;
-		vm.vestInfo = vestInfo;
-		vm.match = '50%';
-	});
-})
+// var vmodel;
+// avalon.ready(function(){
+// 	vmodel = avalon.define('info', function(vm){
+// 		vm.shareInfo = shareInfo;
+// 		vm.vestInfo = vestInfo;
+// 		vm.match = '50%';
+// 	});
+// })
 
 // alert(selfInfo.answer);
 // 匹配答案

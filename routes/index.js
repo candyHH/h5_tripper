@@ -244,19 +244,19 @@ router.get('/result',function (req,res,next) {
   console.log(selfId);
   console.log(shareId);
   if(shareId){
-    client.hget('tripperuser',shareId,function (err,result) {
+    client.hget('tripperuser',shareId,function (err,shareInfo) {
       if(err){
         console.log(err);
       }else{
-        console.log('result...'+result);
-        var shareInfo = JSON.parse(result);
+        var shareInfo = JSON.parse(shareInfo);
+        console.log('shareInfo...'+shareInfo);
         shareInfo.id = shareId;
         client.hget('tripperuser',selfId,function (err,selfinfo) {
           if(err){
             console.log(err);
           }else{
             var selfInfo = JSON.parse(selfinfo);
-            selfInfo.id = selfId;
+            console.log('selfInfo...'+selfInfo);
             client.get('uid',function (err,uid) {
               var a=[];
               console.log('uid..........'+uid);
@@ -273,9 +273,8 @@ router.get('/result',function (req,res,next) {
                 console.log('result.......'+result);
                 var info = {};
                 info.shareInfo = shareInfo;
-                console.log('shareInfo.......'+JSON.stringify(shareInfo));
                 info.selfInfo = selfInfo;
-                info.result = result;
+                info.result = result+'';
                 res.render('result',info);
               })
             })
