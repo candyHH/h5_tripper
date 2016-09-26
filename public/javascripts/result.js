@@ -54,7 +54,7 @@ new Vue({
 // function bg(){
 	var index = $('.match-text').attr('value');
 	console.log('index...'+index);
-	var url = "url(../images/result_" + index + ".png)";
+	var url = "url(../h5tripper/images/result_" + index + ".png)";
 	console.log('url....'+url);
 	$('.match-box').css({'background-image':url});
 // }
