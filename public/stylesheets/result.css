@@ -190,13 +190,25 @@ img{
 	z-index: 10;
 	background-color: red;
 
-	
-
 	position: relative;
 	padding-bottom: 70px;
 
 	position: absolute;
 	z-index: 100;
+}
+
+.follow-img{
+	height: 90%;
+	width: 30%;
+	padding: 5%;
+
+	float: left;
+}
+.follow-img>img{
+	width: 100%;
+}
+.follow-text{
+	float: right;
 }
 .close{
 	
