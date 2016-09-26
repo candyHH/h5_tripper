@@ -1,21 +1,10 @@
-
-// var selfInfo = sessionStorage.getItem('selfInfo');
-// var shareInfo = sessionStorage.getItem('shareInfo');
-// alert(selfInfo);
-// alert(shareInfo);
-
-  $('.share-text-name').html(shareInfo.name);
-    $('.potrait-img').attr('src',shareInfo.img);
-
-
-
 var vmodel;
 avalon.ready(function(){
 	vmodel = avalon.define('info', function(vm){
 		vm.shareInfo = shareInfo;
 		vm.vestInfo = vestInfo;
-		// vm.match = '';
 	});
+	console.log(vmodel.shareInfo,vmodel.vestInfo);
 })
 
 // alert(selfInfo.answer);
@@ -34,7 +23,7 @@ for (var i = 0; i < 10; i++) {
 	};
 };
 
-vmodel.shareInfo.match = flag;
+// vmodel.shareInfo.match = flag;
 
 // 与10个马甲匹配
 // var num = 0;
@@ -48,9 +37,9 @@ for (var j = 0; j < vestInfo.length; j++) {
 	vestInfo[j].match = flag;
 };
 
- vmodel.vestInfo = vestInfo.sort(function(a,b){
- 	return b.match - a.match;
- })
+ // vmodel.vestInfo = vestInfo.sort(function(a,b){
+ // 	return b.match - a.match;
+ // })
 
 
 
