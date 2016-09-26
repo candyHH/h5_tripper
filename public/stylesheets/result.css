@@ -209,9 +209,12 @@ img{
 	line-height: 1.2em;
 }
 .btn-follow{
-	background-color: green;
-	border-radius: 5px;
-	text-decoration: none;
+	background-color: #13ea13;
+	color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5%;
+    font-size: 1em !important;
 }
 .close{
 	width: 20px;
