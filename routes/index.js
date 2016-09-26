@@ -258,13 +258,15 @@ router.get('/result',function (req,res,next) {
             var selfInfo = JSON.parse(selfinfo);
             selfInfo.id = selfId;
             client.get('uid',function (err,uid) {
-              var a=[]
+              var a=[];
+              console.log(uid);
               for(var i =1;i<uid;i++){
                 a.push[i];
               }
               a.sort(function(){return 0.5 - Math.random()});
               a.length = 10;
-              client.hget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
+              console.log(a);
+              client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
                 console.log(result);
                 res.render('result');
               })
