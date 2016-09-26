@@ -54,11 +54,12 @@ new Vue({
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
 	var i = $(this).next('img').attr('value');
+	console.log('i.'+i);
 	var name = vestInfo[i].name;
-	var match = vestInfo[i].match * 10 + '%';
-	console.log('index......'+i);
 	console.log(name);
-	console.log(match);
+
+	var match = vestInfo[i].match * 10 + '%';
+		console.log(match);
 	$('.open-box').removeClass('hide');
 	$('.vest-name').html(name);
 	$('.vest-match').html(match);
