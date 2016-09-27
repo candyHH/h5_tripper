@@ -65,7 +65,7 @@
                 <div class="close">×</div>
             </div>
         </div>
-        
+
 
         <!-- 分享引导蒙层 -->
         <div class="share-intro hide">
@@ -79,7 +79,7 @@
    <script src="javascripts/jquery-1.10.1.min.js"></script>
    <script type="text/javascript">
    </script>
-   
+
   <script>
     var selfInfo = JSON.parse('<%-selfInfo%>');
     var shareInfo = JSON.parse('<%-shareInfo%>');
@@ -93,8 +93,7 @@
     for (var i = 0; i < vestInfo.length; i++) {
         vestInfo[i].answer = vestInfo[i].answer.split(',');
     };
-
-
+    console.log(selfInfo);
 </script>
 <script src="javascripts/result.js"></script>
 
