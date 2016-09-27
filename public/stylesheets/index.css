@@ -126,11 +126,14 @@ img{
 .question-img{
 	height: 100%;
 }
+.topic>.step-9{
+	width: 100%;
+}
 
 /*选项部分*/
 .choice{
 	height: 40%;
-	width: 75%;
+	width: 77%;
 	margin: 0 auto;
 	/*background-color: green;*/
 }
