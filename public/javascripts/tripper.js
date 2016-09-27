@@ -48,10 +48,7 @@ $('.choice-info').click(function(){
 		$('.step-9').hide('slow');
 		$('.step-10').show('slow');
 	}else if(type == '10') {
-		// alert(anser);
-		console.log(answer);
 		answer = answer.join("-");
-		// sessionStorage.setItem('result',anser);
 
 		$.ajax({
 			type : 'post'
@@ -64,7 +61,6 @@ $('.choice-info').click(function(){
 			}
 			,dataType : 'json'
 			,success : function(data){
-				alert('yes');
 				window.location.href = 'result?selfid='+data.selfId+'&&shareid='+shareId+'&&flag=0';
 				// sessionStorage.setItem('shareInfo', JSON.stringify(shareInfo));
 				// sessionStorage.setItem('selfInfo',JSON.stringify(selfInfo));
