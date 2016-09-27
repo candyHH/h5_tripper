@@ -4,12 +4,10 @@
 <script type="text/javascript">
 </script>
 <script type="text/javascript">
-alert('shareid'+selfInfo.id);
 var shareData = {
   title : '十一出行先看看旅伴靠谱啵',
   desc : '系统提示：一位不愿透露姓名的网友想看看你们一起旅行靠谱啵~',
   imgUrl : 'https://dev.lalocal.cn/wechat/h5tripper/images/index_1.png',
-  // link : 'www.baidu.com'
   link : '<%=browserUrl%>'+'/index?id=' + selfInfo.id
 };
 
@@ -20,6 +18,5 @@ var wxConfig = {
   nonceStr : '<%=nonceStr%>',
   signature : '<%=signature%>'
 }
-alert(wxConfig);
 </script>
 <script src="javascripts/base.js"></script>

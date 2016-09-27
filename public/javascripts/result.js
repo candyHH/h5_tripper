@@ -68,7 +68,7 @@ $('.vest').click(function(){
 	var name = vestInfo[i].name;
 	console.log(name);
 	var src = vestInfo[i].img;
-
+	console.log()
 	var match = vestInfo[i].match * 10 + '%';
 		console.log(match);
 	$('.open-box').removeClass('hide');
@@ -85,3 +85,7 @@ $('.close').click(function(){
 $('.btn-share').click(function(){
 	$('.share-intro').removeClass('hide');
 })
+$('.share-intro').click(function(){
+	$('.share-intro').addClass('hide');
+})
+
