@@ -88,4 +88,7 @@ $('.btn-share').click(function(){
 $('.share-intro').click(function(){
 	$('.share-intro').addClass('hide');
 })
+$('.bottom-logo').click(function(){
+	window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.lalocal.lalocal';
+})
 
