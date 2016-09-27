@@ -231,10 +231,10 @@ router.get('/index', function(req, res, next) {
                     }else{
                       flag = 0;
                     }
-                    res.redirect('result?selfid='+selfid+'&&shareid='+shareId+'&&flag='+flag);
+                    res.redirect('result?selfid='+selfid+'&&shareid='+shareId);
                   }else{
                     var flag =0;
-                    res.redirect('result?selfid='+selfid+'&&flag='+flag);
+                    res.redirect('result?selfid='+selfid);
                   }
                 }
               });
@@ -253,6 +253,9 @@ router.get('/result',function (req,res,next) {
   console.log(selfId);
   console.log(shareId);
   if(shareId){
+    if(shareId == selfId){
+      shareId = Math.floor(Math.random()*27+1);
+    }
     client.hget('tripperuser',shareId,function (err,shareInfo) {
       if(err){
         console.log(err);
@@ -285,7 +288,6 @@ router.get('/result',function (req,res,next) {
                       res2.body.shareInfo = JSON.stringify(shareInfo);
                       res2.body.selfInfo = JSON.stringify(selfInfo);
                       res2.body.result = result.join('*');
-                      // res2.body.flag = flag;
                       var string2= JSON.stringify(res2.body);
                       console.log('分享成功啦');
                       res.render('result',res2.body);
@@ -335,7 +337,6 @@ router.get('/result',function (req,res,next) {
                        res2.body.shareInfo = JSON.stringify(shareInfo);
                        res2.body.selfInfo = JSON.stringify(selfInfo);
                        res2.body.result = result.join('*');
-                       // res2.body.flag = flag;
                        var string2= JSON.stringify(res2.body);
                        console.log('分享成功啦');
                        res.render('result',res2.body);
