@@ -37,8 +37,8 @@ for (var j = 0; j < vestInfo.length; j++){
 	vestInfo[j].match = flag;
 	}
 	vestInfo = vestInfo.sort(function(a,b){
- return b.match - a.match;
-})
+	 	return b.match - a.match;
+	})
 
 new Vue({
   el: '#info',

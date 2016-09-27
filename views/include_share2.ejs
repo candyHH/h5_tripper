@@ -1,17 +1,24 @@
 <script type="text/javascript">
+</script>
+<script src="javascripts/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+
 var shareData = {
   title : '十一出行先看看旅伴靠谱啵',
   desc : '系统提示：一位不愿透露姓名的网友想看看你们一起旅行靠谱啵~',
-  imgUrl : '',
-  link : '<%=browserUrl%>' + '/result?selfid=' + selfIntro.id + '&&shareid=' + shareInfo.id
+  imgUrl : 'https://dev.lalocal.cn/wechat/h5tripper/images/index_1.png',
+  link : '<%=browserUrl%>'+'/index?id=' + shareInfo.id
 };
 
+alert(shareData);
 var wxConfig = {
   appId : '<%=appId%>',
   timestamp : '<%=timestamp%>',
   nonceStr : '<%=nonceStr%>',
   signature : '<%=signature%>'
 }
+alert(wxConfig);
 </script>
 <script src="javascripts/base.js"></script>
-<script src="javascripts/jweixin-1.0.0.js"></script>
