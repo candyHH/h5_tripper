@@ -80,7 +80,7 @@ img{
 	margin: 0 auto;
 	/*background-color: pink;*/
 
-	background-image: url(../images/result_10.png);
+	/*background-image: url(../images/result_10.png);*/
 	background-repeat: repeat;
 	background-size: 100% 100%;
 	background-position: relative;
@@ -166,7 +166,7 @@ img{
 	top: 0;
 	right: 0;
 	z-index: 10;
-
+	padding: 15% 10%;
 	background-color: rgba(100,100,100,0.5);
 }
 .share-intro>img{
@@ -183,36 +183,41 @@ img{
 }
 .open{
 	width: 50%;
-	height: 20%;
-	margin: 0 auto;
-	top: 35%;
-	right: 25%;
-	z-index: 10;
-	background-color: red;
-
-	position: relative;
-	padding-bottom: 70px;
-
-	position: absolute;
-	z-index: 100;
+    height: 16%;
+    margin: 0 auto;
+    top: 35%;
+    right: 25%;
+    z-index: 10;
+    background-color: #FFC107;
+    position: relative;
+    position: absolute;
+    z-index: 100;
+    padding: 4% 4%;
 }
 
 .follow-img{
-	height: 90%;
-	width: 30%;
-	padding: 5%;
-
+	height: 100%;
+	width: 35%;
 	float: left;
 }
 .follow-img>img{
 	width: 100%;
 }
 .follow-text{
+	width: 60%;
 	float: right;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+.btn-follow{
+	background-color: #13ea13;
+	color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5%;
+    font-size: 1em !important;
 }
 .close{
-	
-
 	width: 20px;
     height: 20px;
     color: #000;

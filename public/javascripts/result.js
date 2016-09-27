@@ -15,48 +15,66 @@ var match_text = [
 ]
 match_text = match_text.reverse();
 
-	// 匹配答案
-	// 与分享者匹配
+// 匹配答案
+// 与分享者匹配
+var flag = 0;
+for (var i = 0; i < 10; i++) {
+    if (selfAnser[i] == shareAnser[i]) {
+        flag++;
+    };
+};
+shareInfo.match = flag;
+
+// 与10个马甲匹配
+var num = 0;
+for (var j = 0; j < vestInfo.length; j++){
 	var flag = 0;
 	for (var i = 0; i < 10; i++) {
-	    if (selfAnser[i] == shareAnser[i]) {
-	        flag++;
-	    };
-	};
-	shareInfo.match = flag;
-	// console.log(shareInfo.match);
-
-
-	// 与10个马甲匹配
-	var num = 0;
-	for (var j = 0; j < vestInfo.length; j++){
-		var flag = 0;
-		for (var i = 0; i < 10; i++) {
-			if (selfAnser[i] == vestInfo[j].answer[i]) {
-				flag++;
-			};
+		if (selfAnser[i] == vestInfo[j].answer[i]) {
+			flag++;
 		};
-		vestInfo[j].match = flag;
-  	}
-  	vestInfo = vestInfo.sort(function(a,b){
-	 return b.match - a.match;
-	})
-	// console.log(vestInfo,match_text);
+	};
+	vestInfo[j].match = flag;
+	}
+	vestInfo = vestInfo.sort(function(a,b){
+ return b.match - a.match;
+})
 
-	new Vue({
-	  el: '#info',
-	  data: {
-	    message: 'Hello Vue.js!',
-			shareInfo: shareInfo,
-			vestInfo: vestInfo,
-			match_text: match_text[shareInfo.match]
-	  }
-	})
+new Vue({
+  el: '#info',
+  data: {
+    message: 'Hello Vue.js!',
+		shareInfo: shareInfo,
+		vestInfo: vestInfo,
+		match_text: match_text[shareInfo.match]
+  }
+})
+
+// 更换匹配文案背景图
+// function bg(){
+	var index = $('.match-text').attr('value');
+	console.log('index...'+index);
+	var url = "url(../h5tripper/images/result_" + index + ".png)";
+	console.log('url....'+url);
+	$('.match-box').css({'background-image':url});
+// }
+// bg();
 
 
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
+	var i = $(this).children(":first").attr('value');
+	console.log('i.'+i);
+	var name = vestInfo[i].name;
+	console.log(name);
+	var src = vestInfo[i].img;
+
+	var match = vestInfo[i].match * 10 + '%';
+		console.log(match);
 	$('.open-box').removeClass('hide');
+	$('.vest-name').html(name);
+	$('.vest-match').html(match);
+	$('.vest-img').attr('src',src);
 })
 
 $('.close').click(function(){
