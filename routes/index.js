@@ -287,7 +287,7 @@ router.get('/result',function (req,res,next) {
                       res2.body.result = result.join('*');
                       // res2.body.flag = flag;
                       var string2= JSON.stringify(res2.body);
-                      console.log('分享成功啦！');
+                      console.log('分享成功啦');
                       res.render('result',res2.body);
                     } else {
                       console.error('微信分享api错误。');
@@ -327,27 +327,22 @@ router.get('/result',function (req,res,next) {
                a.length = 10;
                console.log(a);
                client.hmget('tripperuser',a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],function (err,result) {
-                 var info = {};
-                 info.shareInfo = JSON.stringify(shareInfo);
-                 info.selfInfo = JSON.stringify(selfInfo);
-                 info.result = result.join('*');
-                 console.log(info.result);
-                 console.log('result.......'+typeof(info.result));
                  superagent
                    .get(global.wechatURL + '/wechat_api/jsconfig?url=' + shareUrl)
                    .end(function(err2, res2) {
                      if (res2 !== undefined && res2.ok) {
                        res2.body.browserUrl = global.browserURL;
-                       res2.body.selfInfo = selfInfo;
-                       res2.body.shareInfo = shareInfo;
+                       res2.body.shareInfo = JSON.stringify(shareInfo);
+                       res2.body.selfInfo = JSON.stringify(selfInfo);
+                       res2.body.result = result.join('*');
+                       // res2.body.flag = flag;
                        var string2= JSON.stringify(res2.body);
-                       console.log('分享成功啦！'+string2);
-                       res.render('index',res2.body);
+                       console.log('分享成功啦');
+                       res.render('result',res2.body);
                      } else {
                        console.error('微信分享api错误。');
                      }
                    });
-                 res.render('result',info);
                })
              })
            }
