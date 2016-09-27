@@ -55,22 +55,29 @@ img{
 .result-header{
 	height: 13%;
 	/*background-color: yellow;*/
-	padding: 9% 10% 4% 8%;
+	padding: 9% 10% 4% 6%;
 	text-align: left;
 
 }
 
 .potrait-img{
-	margin-right: 5%;
+	/*margin-right: 5%;*/
 	height: 100%;
 
 }
 .share-text{
-	float: right;
+	/*float: right;
 	height: 100%;
 	display: inline-block;
 	width: 75%;
-	font-size: 1em;
+	font-size: 1em;*/
+
+	float: right;
+	height: 100%;
+	display: inline-block;
+	width: 77%;
+	font-size: 17px;
+	line-height: 28px;
 }
 
 /*匹配文案框*/
