@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>参与游戏名单</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  </head>
+  <body id="show">
+    <table class="table table-striped">
+       <thead>
+         <tr>
+           <th>名称</th>
+           <th>答案</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr v-for="info in userInfo">
+           <td >{{info.name}}</td>
+           <td >{{info.answer}}</td>
+         </tr>
+       </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    var info = '<%-info%>';
+  </script>
+  <script type="text/javascript" src="javascripts/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/vue.js"></script>
+  <script type="text/javascript" src="javascripts/show.js"></script>
+</html>

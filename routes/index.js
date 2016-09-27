@@ -372,6 +372,18 @@ router.get('/addData', function(req, res, next) {
   res.render('addData');
 });
 
+router.get('/show', function(req, res, next) {
+  client.hgetall('tripperuser',function (err,info) {
+    var userInfo = [];
+    for(var i in info){
+      userInfo.push(info[i]);
+    }
+    console.log(userInfo);
+    var info = userInfo.join('*');
+    res.render('show',{info:info});
+  })
+});
+
 router.post('/post',function (req,res,next) {
   var userInfo = {
     name:req.body.name,
