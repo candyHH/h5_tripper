@@ -14,11 +14,28 @@ img{
 	/*width: 100%;*/
 }
 .music-box{
-	height: 6%;
+	height: 50px;
+	width: 50px;
 	position: fixed;
 	top: 2%;
 	right: 6%;
 }
+/*音乐开关动画*/
+@-webkit-keyframes z-rotate {
+            0%    { -webkit-transform: rotatez(0deg); }
+            50%   { -webkit-transform: rotatez(180deg); }
+            100%  { -webkit-transform: rotatez(360deg); }
+        }
+
+.rotate {
+        -webkit-transform-style: preserve-3d;
+        -webkit-animation-name: z-rotate;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+}
+
+
 .music-img{
 	height: 100%;
 }

@@ -69,3 +69,24 @@ $('.choice-info').click(function(){
 		})
 	}
 })
+
+// 控制音乐
+ var audio = document.getElementById('audio');
+
+   $('.music-box').click(function(){
+    if ($(this).attr('value') == 1) {
+        audio.pause();
+        $(this).attr('value','0');
+        $(this).removeClass('rotate');
+    }else if ($(this).attr('value') == 0) {
+        audio.play();
+        $(this).attr('value','1');
+        $(this).addClass('rotate');
+    };
+   })
+
+
+
+
+
+
