@@ -54,6 +54,7 @@ img{
 /*顶部头像和题号*/
 .result-header{
 	height: 13%;
+	/*background-color: yellow;*/
 	padding: 9% 10% 4% 8%;
 	text-align: left;
 
