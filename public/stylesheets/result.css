@@ -166,8 +166,8 @@ img{
 	top: 0;
 	right: 0;
 	z-index: 10;
-	padding: 15% 10%;
-	background-color: rgba(100,100,100,0.5);
+	padding: 25% 10%;
+	background-color: rgba(150,150,150,0.5);
 }
 .share-intro>img{
 	width: 100%;
