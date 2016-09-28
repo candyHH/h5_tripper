@@ -5,7 +5,7 @@ $(document).ready(function(){
 	setTimeout(function(){
 		$('.index').hide('slow');
 		$('.question').show('slow');
-	},2000);
+	},1000);
 })
 // 点击音乐开关,音乐开启，图片转动，音乐暂停，图片复位
 // $('.music-box').click(function(){

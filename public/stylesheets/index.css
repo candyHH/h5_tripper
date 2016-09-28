@@ -14,8 +14,8 @@ img{
 	/*width: 100%;*/
 }
 .music-box{
-	height: 50px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 	position: fixed;
 	top: 2%;
 	right: 6%;
@@ -82,22 +82,22 @@ img{
 }
 .share-info{
 	height: 50%;
-	padding-left: 8%;
-	padding-right: 27%;
-	/*background-color: pink;*/
+	padding-left: 6%;
+	/*padding-right: 27%;*/
 	text-align: left;
 }
 .potrait-img{
-	margin-right: 5%;
+	/*margin-right: 5%;*/
 	height: 100%;
 }
 .share-text{
 	float: right;
 	height: 100%;
 	display: inline-block;
-	width: 63%;
+	width: 77%;
 
-	font-size: 1.2em;
+	font-size: 17px;
+	line-height: 28px;
 
 }
 .step-box{
@@ -124,13 +124,16 @@ img{
 	width: 80%;
 }
 .question-img{
+	height: 100%;
+}
+.topic>.step-9{
 	width: 100%;
 }
 
 /*选项部分*/
 .choice{
 	height: 40%;
-	width: 75%;
+	width: 77%;
 	margin: 0 auto;
 	/*background-color: green;*/
 }
