@@ -11,7 +11,7 @@ wx.config({
     'onMenuShareAppMessage',
     'onMenuShareQQ',
     'onMenuShareWeibo',
-    // 'hideMenuItems',
+    'hideMenuItems',
     'showMenuItems',
     // 'hideAllNonBaseMenuItem',
     'showAllNonBaseMenuItem',
@@ -53,7 +53,7 @@ wx.ready(function() {
   });
 
 
-  
+
 });
 // wx.error(function(res) {
 //   alert(res.errMsg);
