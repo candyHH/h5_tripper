@@ -73,16 +73,16 @@ $('.vest').click(function(){
 		// console.log(match);
 
 
-	// $('.open-box').removeClass('hide');
-	$('.open-box').show('slow');
+	$('.open-box').removeClass('hide');
+	// $('.open-box').show('slow');
 	$('.vest-name').html(name);
 	$('.vest-match').html(match);
 	$('.vest-img').attr('src',src);
 })
 
 $('.close').click(function(){
-	$('.open-box').hide('slow');
-	// $('.open-box').addClass('hide');
+	// $('.open-box').hide('slow');
+	$('.open-box').addClass('hide');
 })
 
 // 点击分享
