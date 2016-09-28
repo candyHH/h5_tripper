@@ -120,12 +120,15 @@ img{
 	width: 71%;
 	margin: 2% auto;
 }
-.topic>.step-7{
-	width: 80%;
-}
 .question-img{
 	height: 100%;
 	/*width: 100%;*/
+}
+.topic>.step-7{
+	width: 80%;
+}
+.topic>.step-8{
+	width: 80%;
 }
 .topic>.step-9{
 	width: 100%;
