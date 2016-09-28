@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no" />
     <title>十一出行先看看旅伴靠谱啵</title>
     <link rel="stylesheet" href="stylesheets/result.css">
+    <%include include_count.ejs %>
     <script src="javascripts/vue.js"></script>
   </head>
   <body id="info">
@@ -73,14 +74,14 @@
   </body>
 
    <script src="javascripts/jquery-1.10.1.min.js"></script>
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
    $(document).ready(function(){
      console.log('hhhh');
      $(window).unload(function(){
        window.close();
      });
    });
-   </script>
+   </script> -->
     <script>
       var selfInfo = JSON.parse('<%-selfInfo%>');
       var shareInfo = JSON.parse('<%-shareInfo%>');
