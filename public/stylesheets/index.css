@@ -125,6 +125,7 @@ img{
 }
 .question-img{
 	height: 100%;
+	/*width: 100%;*/
 }
 .topic>.step-9{
 	width: 100%;
