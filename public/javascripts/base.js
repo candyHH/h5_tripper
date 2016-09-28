@@ -46,6 +46,7 @@ wx.config({
 wx.ready(function() {
   wx.onMenuShareAppMessage(shareData);
   wx.onMenuShareTimeline(shareData);
+  wx.hideOptionMenu();
   wx.hideMenuItems({
     menuList: ['menuItem:originPage', 'menuItem:copyUrl',
      'menuItem:openWithSafari','menuItem:share:qq'
