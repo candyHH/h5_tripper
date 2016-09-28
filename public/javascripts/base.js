@@ -12,9 +12,9 @@ wx.config({
     'onMenuShareQQ',
     'onMenuShareWeibo',
     'hideMenuItems',
-    // 'showMenuItems',
+    //'showMenuItems',
     // 'hideAllNonBaseMenuItem',
-    // 'showAllNonBaseMenuItem',
+    'showAllNonBaseMenuItem',
     'translateVoice',
     'startRecord',
     'stopRecord',
@@ -46,12 +46,20 @@ wx.config({
 wx.ready(function() {
   wx.onMenuShareAppMessage(shareData);
   wx.onMenuShareTimeline(shareData);
-  wx.hideOptionMenu();
   wx.hideMenuItems({
-    menuList: ['menuItem:originPage', 'menuItem:copyUrl',
-     'menuItem:openWithSafari','menuItem:share:qq'
+    menuList: [
+      'menuItem:originPage',
+      'menuItem:openWithQQBrowser',
+      'menuItem:copyUrl',
+      'menuItem:openWithSafari',
+      'menuItem:share:qq',
+      'menuItem:share:email',
+      'menuItem:share:weiboApp'
     ],
   });
+
+
+
 });
 // wx.error(function(res) {
 //   alert(res.errMsg);
