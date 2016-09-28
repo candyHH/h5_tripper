@@ -12,9 +12,9 @@ wx.config({
     'onMenuShareQQ',
     'onMenuShareWeibo',
     'hideMenuItems',
-    'showMenuItems',
+    // 'showMenuItems',
     // 'hideAllNonBaseMenuItem',
-    'showAllNonBaseMenuItem',
+    // 'showAllNonBaseMenuItem',
     'translateVoice',
     'startRecord',
     'stopRecord',
@@ -48,12 +48,9 @@ wx.ready(function() {
   wx.onMenuShareTimeline(shareData);
   wx.hideMenuItems({
     menuList: ['menuItem:originPage', 'menuItem:copyUrl',
-     'menuItem:openWithSafari'
+     'menuItem:openWithSafari','menuItem:share:qq'
     ],
   });
-
-
-
 });
 // wx.error(function(res) {
 //   alert(res.errMsg);
