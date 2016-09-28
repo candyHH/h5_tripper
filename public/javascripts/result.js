@@ -64,21 +64,25 @@ new Vue({
 // 点击马甲头像，跳出弹框
 $('.vest').click(function(){
 	var i = $(this).children(":first").attr('value');
-	console.log('i.'+i);
+	// console.log('i.'+i);
 	var name = vestInfo[i].name;
-	console.log(name);
+	// console.log(name);
 	var src = vestInfo[i].img;
-	console.log()
+	// console.log()
 	var match = vestInfo[i].match * 10 + '%';
-		console.log(match);
-	$('.open-box').removeClass('hide');
+		// console.log(match);
+
+
+	// $('.open-box').removeClass('hide');
+	$('.open-box').show('slow');
 	$('.vest-name').html(name);
 	$('.vest-match').html(match);
 	$('.vest-img').attr('src',src);
 })
 
 $('.close').click(function(){
-	$('.open-box').addClass('hide');
+	$('.open-box').hide('slow');
+	// $('.open-box').addClass('hide');
 })
 
 // 点击分享
