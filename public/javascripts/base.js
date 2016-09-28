@@ -47,8 +47,8 @@ wx.ready(function() {
   wx.onMenuShareAppMessage(shareData);
   wx.onMenuShareTimeline(shareData);
   wx.hideMenuItems({
-    menuList: ['menuItem:originPage', 'menuItem:openWithQQBrowser',
-      'menuItem:copyUrl', 'menuItem:openWithSafari'
+    menuList: ['menuItem:originPage', 'menuItem:copyUrl',
+     'menuItem:openWithSafari'
     ],
   });
 
