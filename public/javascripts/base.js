@@ -54,7 +54,8 @@ wx.ready(function() {
       'menuItem:openWithSafari',
       'menuItem:share:qq',
       'menuItem:share:email',
-      'menuItem:share:weiboApp'
+      'menuItem:share:weiboApp',
+      'menuItem:share:QZone'
     ],
   });
 
