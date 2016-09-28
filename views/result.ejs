@@ -74,25 +74,30 @@
 
    <script src="javascripts/jquery-1.10.1.min.js"></script>
    <script type="text/javascript">
+   $(document).ready(function(){
+     console.log('hhhh');
+     $(window).unload(function(){
+       window.close();
+     });
+   });
    </script>
-
-  <script>
-    var selfInfo = JSON.parse('<%-selfInfo%>');
-    var shareInfo = JSON.parse('<%-shareInfo%>');
-    var vestInfo = '<%-result%>';
-    vestInfo = vestInfo.split('*');
-    for(var i =0;i<vestInfo.length;i++){
-      vestInfo[i] = JSON.parse(vestInfo[i]);
-    }
-    console.log(vestInfo);
-    console.log(vestInfo[0].answer);
-    var selfAnser = selfInfo.answer.split('-');
-    var shareAnser = shareInfo.answer.split('-');
-    for (var i = 0; i < vestInfo.length; i++) {
-        vestInfo[i].answer = vestInfo[i].answer.split('-');
-    };
-    console.log(selfInfo);
-</script>
+    <script>
+      var selfInfo = JSON.parse('<%-selfInfo%>');
+      var shareInfo = JSON.parse('<%-shareInfo%>');
+      var vestInfo = '<%-result%>';
+      vestInfo = vestInfo.split('*');
+      for(var i =0;i<vestInfo.length;i++){
+        vestInfo[i] = JSON.parse(vestInfo[i]);
+      }
+      console.log(vestInfo);
+      console.log(vestInfo[0].answer);
+      var selfAnser = selfInfo.answer.split('-');
+      var shareAnser = shareInfo.answer.split('-');
+      for (var i = 0; i < vestInfo.length; i++) {
+          vestInfo[i].answer = vestInfo[i].answer.split('-');
+      };
+      console.log(selfInfo);
+  </script>
 <%include include_share2.ejs%>
 <script src="javascripts/result.js"></script>
 
