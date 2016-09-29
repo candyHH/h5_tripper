@@ -25,6 +25,9 @@ for (var i = 0; i < 10; i++) {
 };
 shareInfo.match = flag;
 
+var height = $('.vest').css('width');
+$('.vest').height(height);
+
 // 与10个马甲匹配
 var num = 0;
 for (var j = 0; j < vestInfo.length; j++){
@@ -95,4 +98,3 @@ $('.share-intro').click(function(){
 $('.bottom-logo').click(function(){
 	window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.lalocal.lalocal';
 })
-
