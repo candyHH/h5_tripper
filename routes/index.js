@@ -374,13 +374,16 @@ router.get('/addData', function(req, res, next) {
 
 router.get('/show', function(req, res, next) {
   client.hgetall('tripperuser',function (err,info) {
+    console.log(info);
     var userInfo = [];
+    var playInfo = [];
     for(var i in info){
       userInfo.push(info[i]);
     }
-    console.log(userInfo);
-    var info = userInfo.join('*');
-    res.render('show',{info:info});
+    for(var i =0;i<userInfo.length;i++){
+      playInfo.push(JSON.parse(userInfo[i]));
+    }
+    res.render('show',{info:playInfo});
   })
 });
 

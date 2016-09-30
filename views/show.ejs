@@ -14,19 +14,15 @@
          </tr>
        </thead>
        <tbody>
-         <tr v-for="info in userInfo">
-           <td >{{info.name}}</td>
-           <td >{{info.answer}}</td>
-         </tr>
+         <%for(var i = 0;i<info.length;i++){%>
+           <tr>
+             <td ><%=info[i].name%></td>
+             <td ><%=info[i].answer%></td>
+           </tr>
+         <%}%>
        </tbody>
     </table>
   </body>
-  <script type="text/javascript">
-    var info = '<%-info%>';
-    console.log(info);
-  </script>
   <script type="text/javascript" src="javascripts/jquery-1.10.1.min.js"></script>
   <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
-  <script type="text/javascript" src="javascripts/vue.js"></script>
-  <script type="text/javascript" src="javascripts/show.js"></script>
 </html>
